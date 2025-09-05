@@ -1,41 +1,151 @@
-# Matriz de provincias del sur
-# Cada fila: [tema, pregunta, respuesta]
+paquetes = [
+    # CHUBUT (1)
+    [1, 1, "Puerto Madryn", "8d/7n",
+     "Vuelo Aerolíneas ($654.879) o Flybondi ($535.000) / Bus Plusmar ($75.000-$100.000)",
+     "Hotel Dazzle ($1.000.904) o Rayentray Hostal ($420.005)",
+     "Península Valdés + avistaje de ballenas", 1500000],
 
-matriz = [
-    ["neuquen", "como puedo viajar a neuquen en avion y cuanto cuesta y dura",
-     "El Aeropuerto Internacional Presidente Perón (NQN) conecta la ciudad de Neuquén con Buenos Aires. El tiempo estimado de vuelo es de aproximadamente 2 horas, con un costo desde $90.000 por Aerolíneas Argentinas, incluyendo ida y vuelta"],
-    
-    ["neuquen", "como puedo viajar a neuquen en micro y cuanto cuesta y dura",
-     "La conexión se realiza por la Ruta Nacional 22 y otras rutas que atraviesan la provincia. Hay servicios de ómnibus de larga distancia desde Buenos Aires y otras ciudades principales. El tiempo estimado de viaje en micro es de aproximadamente 17 a 20 horas, con un costo promedio de $50.000 por Central de Pasajes, incluyendo ida y vuelta"],
-    
-    ["rio negro", "como puedo viajar a rio negro en avion y cuanto cuesta y dura",
-     "Puedes viajar a Río Negro en avión a través del Aeropuerto Internacional de San Carlos de Bariloche (BRC), que conecta la ciudad con Buenos Aires y otras ciudades principales. El tiempo estimado de vuelo es de aproximadamente 2:15 horas, con un costo desde $100.000 por Aerolíneas Argentinas, incluyendo ida y vuelta"],
-    
-    ["rio negro", "como puedo viajar a rio negro en micro y cuanto cuesta y dura",
-     "Podés viajar a Río Negro en micro desde Buenos Aires con diferentes opciones según el destino. Por ejemplo, el viaje a San Carlos de Bariloche dura entre 20 y 24 horas, con pasajes desde aproximadamente $8.500 hasta $105.000, dependiendo de la empresa y el servicio elegido. En cambio, el trayecto a Viedma tiene una duración de alrededor de 12 a 14 horas, y los precios varían entre $50.000 y $90.000. Las principales empresas que operan estas rutas incluyen Vía Bariloche, Vía Tac, Chevallier, Andesmar y El Cóndor."],
-    
-    ["chubut", "como puedo viajar a chubut en avion y cuanto cuesta y dura",
-     "Para viajar a Chubut en avión desde Buenos Aires, puedes volar directamente a Trelew, Puerto Madryn o Comodoro Rivadavia. El vuelo a Trelew dura aproximadamente 2 horas y 5 minutos, y los precios de los pasajes suelen estar entre $90.000 y $99.000. Los vuelos a Puerto Madryn duran unas 2 horas, rondando los $80.000. Comodoro Rivadavia está a 2h15, con precios similares. Aerolíneas Argentinas y JetSMART operan estas rutas."],
-    
-    ["chubut", "como puedo viajar a chubut en micro y cuanto cuesta y dura",
-     "Desde Buenos Aires a Trelew: 19 a 22 horas, $83.725 - $84.937. A Puerto Madryn: 17 a 20 horas, $71.250 - $106.875. A Comodoro Rivadavia: 24 a 27 horas, hasta $101.320. Empresas: Andesmar, Vía Bariloche, Cóndor Estrella, Don Otto."],
-    
-    ["santa cruz", "como puedo viajar en avion a santa cruz y cuanto cuesta y dura",
-     "Puedes viajar a Santa Cruz en avión a través del Aeropuerto Internacional Viru Viru. El tiempo estimado de vuelo es de aproximadamente 3 horas, con un costo desde $80.000 por Aerolíneas Argentinas, incluyendo ida y vuelta"],
-    
-    ["santa cruz", "como puedo viajar en micro a santa cruz y cuanto cuesta y dura",
-     "Desde Buenos Aires a Río Gallegos: 36 a 40 horas, entre $100.000 y $150.000. Empresas: Taqsa, Marga, Condor Estrella."],
-    
-    ["tierra del fuego", "como puedo viajar a tierra del fuego en avion y cuanto cuesta y dura",
-     "Vuelo directo Buenos Aires - Ushuaia: 3h30, precio entre $80.000 y $150.000, según temporada. Aerolíneas Argentinas y otras empresas operan la ruta."],
-    
-    ["tierra del fuego", "como puedo viajar a tierra del fuego en micro y cuanto cuesta y dura",
-     "Viaje Buenos Aires - Ushuaia en micro: 50 a 55 horas, incluye cruce por Chile y reingreso a Argentina. Precio desde $270.000 en adelante."]
+    [1, 2, "Esquel", "8d/7n",
+     "Vuelo Aerolíneas ($420.699) o Flybondi ($360.000) / Bus Plusmar ($85.000-$110.000)",
+     "My Pod House ($145.000) o Depto Antigua Estación ($665.046)",
+     "La Hoya (Esquí y Snowboard)", 700000],
+
+    [1, 3, "Trelew", "8d/7n",
+     "Vuelo Aerolíneas ($734.000) o Jetsmart ($580.058) / Bus Plusmar ($80.000-$110.000)",
+     "Hotel Libertador ($498.980) o Cabañas El Colibrí ($693.798)",
+     "Paseo aéreo Aeroclub Trelew", 1000000],
+
+    [1, 4, "Comodoro Rivadavia", "8d/7n",
+     "Vuelo Aerolíneas ($270.058) o Jetsmart ($230.000) / Bus Plusmar ($90.000-$130.000)",
+     "Lucania Palazzo Hotel ($1.346.000) o Depto Paisaje 1 ($466.232)",
+     "Patagonia Salvaje 4x4", 1200000],
+
+    # SANTA CRUZ (2)
+    [2, 1, "El Calafate", "8d/7n",
+     "Vuelo Aerolíneas ($500.000) o Bus ($120.000)",
+     "Hotel Los Álamos ($950.000) o Hostal Lago Argentino ($400.000)",
+     "Glaciar Perito Moreno", 1300000],
+
+    [2, 2, "Río Gallegos", "8d/7n",
+     "Vuelo Jetsmart ($450.000) o Bus ($100.000)",
+     "Hotel Patagonia ($800.000) o Depto céntrico ($300.000)",
+     "Reserva Cabo Vírgenes", 1000000],
+
+    [2, 3, "El Chaltén", "8d/7n",
+     "Vuelo a El Calafate + transfer ($550.000) o Bus ($150.000)",
+     "Hostería Fitz Roy ($750.000) o Camping El Relincho ($200.000)",
+     "Trekking Laguna de los Tres", 950000],
+
+    [2, 4, "Puerto Deseado", "8d/7n",
+     "Vuelo a Comodoro + bus ($400.000) o Bus directo ($180.000)",
+     "Hotel Los Acantilados ($600.000) o Hostería El Puerto ($250.000)",
+     "Avistaje de toninas overas", 850000],
+
+    # TIERRA DEL FUEGO (3)
+    [3, 1, "Ushuaia", "8d/7n",
+     "Vuelo Aerolíneas ($600.000) o Jetsmart ($520.000)",
+     "Hotel Arakur ($1.200.000) o Hostería Foque ($450.000)",
+     "Parque Nacional Tierra del Fuego", 1400000],
+
+    [3, 2, "Tolhuin", "8d/7n",
+     "Vuelo a Ushuaia + transfer ($620.000) o Bus ($200.000)",
+     "Posada de la Madera ($500.000) o Cabañas Altos de Tolhuin ($300.000)",
+     "Lago Fagnano + actividades náuticas", 900000],
+
+    [3, 3, "Río Grande", "8d/7n",
+     "Vuelo a Río Grande ($550.000) o Bus ($220.000)",
+     "Gran Hotel Río Grande ($700.000) o Depto céntrico ($280.000)",
+     "Pesca deportiva en el río", 850000],
+
+    [3, 4, "Cabo San Pablo", "8d/7n",
+     "Vuelo a Río Grande + transfer ($600.000) o Bus ($250.000)",
+     "Estancia San Pablo ($650.000) o Hostería Cabo ($300.000)",
+     "Excursión Faro + Desembarco Desdémona", 950000],
+
+    # NEUQUÉN (4)
+    [4, 1, "San Martín de los Andes", "8d/7n",
+     "Vuelo Aerolíneas ($500.000) o Bus ($180.000)",
+     "Hotel Patagonia Plaza ($900.000) o Cabañas Arrayanes ($400.000)",
+     "Chapelco Ski Resort", 1200000],
+
+    [4, 2, "Villa La Angostura", "8d/7n",
+     "Vuelo a Bariloche + bus ($520.000) o Bus ($200.000)",
+     "Hostería El Faro ($800.000) o Cabañas Los Ñires ($350.000)",
+     "Bosque de Arrayanes", 1100000],
+
+    [4, 3, "Caviahue", "8d/7n",
+     "Vuelo a Neuquén + transfer ($480.000) o Bus ($190.000)",
+     "Hotel Nevado ($700.000) o Hostel Caviahue ($250.000)",
+     "Termas + volcán Copahue", 950000],
+
+    [4, 4, "Zapala", "8d/7n",
+     "Vuelo a Neuquén + bus ($460.000) o Bus ($170.000)",
+     "Hotel Portal del Pehuén ($600.000) o Depto céntrico ($280.000)",
+     "Parque Laguna Blanca", 850000],
+
+    # RÍO NEGRO (5)
+    [5, 1, "Bariloche", "8d/7n",
+     "Vuelo Aerolíneas ($550.000) o Jetsmart ($480.000) / Bus ($180.000)",
+     "Hotel Edelweiss ($1.000.000) o Hostel Pioneros ($350.000)",
+     "Circuito Chico + Cerro Catedral", 1300000],
+
+    [5, 2, "El Bolsón", "8d/7n",
+     "Vuelo a Bariloche + bus ($500.000) o Bus ($200.000)",
+     "Cabañas Piltriquitrón ($450.000) o Hostel Mandala ($200.000)",
+     "Cajón del Azul", 800000],
+
+    [5, 3, "Las Grutas", "8d/7n",
+     "Vuelo a Viedma + bus ($450.000) o Bus ($220.000)",
+     "Hotel Acantilados ($600.000) o Depto frente al mar ($300.000)",
+     "Avistaje de fauna marina", 900000],
+
+    [5, 4, "Viedma", "8d/7n",
+     "Vuelo Aerolíneas ($400.000) o Bus ($180.000)",
+     "Hotel Austral ($500.000) o Depto céntrico ($250.000)",
+     "Balneario El Cóndor", 750000]
 ]
 
-# Mostrar la matriz completa
-for fila in matriz:
-    print(fila)
+def mostrar_paquete(paquete):
+    print("\n--- Paquete", paquete[1], "---")
+    print("Destino:", paquete[2])
+    print("Duración:", paquete[3])
+    print("Transporte:", paquete[4])
+    print("Alojamiento:", paquete[5])
+    print("Excursión principal:", paquete[6])
+    print("Costo total aprox:", paquete[7])
 
+def buscar_por_provincia(matriz, nro_provincia, i=0, resultados=None):
+    if resultados is None:
+        resultados = []
+    if i >= len(matriz):
+        return resultados
+    if matriz[i][0] == nro_provincia:
+        resultados.append(matriz[i])
+    return buscar_por_provincia(matriz, nro_provincia, i+1, resultados)
+
+#Programa Principal
+opcion = 0
+while opcion != 3:
+    print("\n--- Sistema de Paquetes Turísticos ---")
+    print("1. Ver paquetes por provincia")
+    print("2. Ver todos los destinos")
+    print("3. Salir")
+
+    opcion = int(input("Elija una opción: "))
+
+    if opcion == 1:
+        print("1=Chubut, 2=Santa Cruz, 3=Tierra del Fuego, 4=Neuquén, 5=Río Negro")
+        prov = int(input("Ingrese número de provincia: "))
+        resultados = buscar_por_provincia(paquetes, prov)
+        if resultados:
+            for r in resultados:
+                mostrar_paquete(r)
+        else:
+            print("No hay paquetes para esa provincia")
+
+    elif opcion == 2:
+        print("\n--- Todos los destinos ---")
+        for fila in paquetes:
+            print(fila[2], "→", fila[7], "aprox")
 
 
