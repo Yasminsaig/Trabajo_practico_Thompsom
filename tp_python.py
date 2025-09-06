@@ -1,135 +1,106 @@
 paquetes = [
-    # CHUBUT (1)
-    [1, 1, "Puerto Madryn", "8d/7n",
-     "Vuelo Aerolíneas ($654.879) o Flybondi ($535.000) / Bus Plusmar ($75.000-$100.000)",
-     "Hotel Dazzle ($1.000.904) o Rayentray Hostal ($420.005)",
-     "Península Valdés + avistaje de ballenas", 1500000],
+    # Chubut - 1
+    [1, 1, "Puerto Madryn", "8d/7n", "Vuelo Aerolíneas / Bus Plusmar",
+     "Hotel Dazzle ★★★★ / Hostal Rayentray ★★", "Avistaje de ballenas", 1500000, False],
 
-    [1, 2, "Esquel", "8d/7n",
-     "Vuelo Aerolíneas ($420.699) o Flybondi ($360.000) / Bus Plusmar ($85.000-$110.000)",
-     "My Pod House ($145.000) o Depto Antigua Estación ($665.046)",
-     "La Hoya (Esquí y Snowboard)", 700000],
+    [1, 2, "Esquel", "8d/7n", "Vuelo Aerolíneas / Bus Plusmar",
+     "My Pod House ★★ / Depto Antigua Estación ★★★", "La Hoya Ski Resort", 700000, False],
 
-    [1, 3, "Trelew", "8d/7n",
-     "Vuelo Aerolíneas ($734.000) o Jetsmart ($580.058) / Bus Plusmar ($80.000-$110.000)",
-     "Hotel Libertador ($498.980) o Cabañas El Colibrí ($693.798)",
-     "Paseo aéreo Aeroclub Trelew", 1000000],
+    [1, 3, "Trelew", "8d/7n", "Vuelo Aerolíneas / Bus Plusmar",
+     "Hotel Libertador ★★★ / Cabañas El Colibrí ★★", "Paseo aéreo Aeroclub", 1000000, False],
 
-    [1, 4, "Comodoro Rivadavia", "8d/7n",
-     "Vuelo Aerolíneas ($270.058) o Jetsmart ($230.000) / Bus Plusmar ($90.000-$130.000)",
-     "Lucania Palazzo Hotel ($1.346.000) o Depto Paisaje 1 ($466.232)",
-     "Patagonia Salvaje 4x4", 1200000],
+    [1, 4, "Comodoro Rivadavia", "8d/7n", "Vuelo Aerolíneas / Bus Plusmar",
+     "Lucania Palazzo Hotel ★★★★ / Depto Paisaje 1 ★★", "Patagonia Salvaje 4x4", 1200000, False],
 
-    # SANTA CRUZ (2)
-    [2, 1, "El Calafate", "8d/7n",
-     "Vuelo Aerolíneas ($500.000) o Bus ($120.000)",
-     "Hotel Los Álamos ($950.000) o Hostal Lago Argentino ($400.000)",
-     "Glaciar Perito Moreno", 1300000],
+    # Santa Cruz - 2
+    [2, 1, "El Calafate", "8d/7n", "Vuelo Aerolíneas / Bus",
+     "Hotel Los Álamos ★★★★ / Hostal Lago Argentino ★★", "Glaciar Perito Moreno", 1300000, False],
 
-    [2, 2, "Río Gallegos", "8d/7n",
-     "Vuelo Jetsmart ($450.000) o Bus ($100.000)",
-     "Hotel Patagonia ($800.000) o Depto céntrico ($300.000)",
-     "Reserva Cabo Vírgenes", 1000000],
+    [2, 2, "Río Gallegos", "8d/7n", "Vuelo Jetsmart / Bus",
+     "Hotel Patagonia ★★★★ / Depto céntrico ★★", "Reserva Cabo Vírgenes", 1000000, False],
 
-    [2, 3, "El Chaltén", "8d/7n",
-     "Vuelo a El Calafate + transfer ($550.000) o Bus ($150.000)",
-     "Hostería Fitz Roy ($750.000) o Camping El Relincho ($200.000)",
-     "Trekking Laguna de los Tres", 950000],
+    [2, 3, "El Chaltén", "8d/7n", "Vuelo a Calafate + Transfer / Bus",
+     "Hostería Fitz Roy ★★★★ / Camping El Relincho ★", "Trekking Laguna de los Tres", 950000, False],
 
-    [2, 4, "Puerto Deseado", "8d/7n",
-     "Vuelo a Comodoro + bus ($400.000) o Bus directo ($180.000)",
-     "Hotel Los Acantilados ($600.000) o Hostería El Puerto ($250.000)",
-     "Avistaje de toninas overas", 850000],
+    [2, 4, "Puerto Deseado", "8d/7n", "Vuelo a Comodoro + Bus / Bus directo",
+     "Hotel Los Acantilados ★★★ / Hostería El Puerto ★★", "Avistaje de toninas overas", 850000, False],
 
-    # TIERRA DEL FUEGO (3)
-    [3, 1, "Ushuaia", "8d/7n",
-     "Vuelo Aerolíneas ($600.000) o Jetsmart ($520.000)",
-     "Hotel Arakur ($1.200.000) o Hostería Foque ($450.000)",
-     "Parque Nacional Tierra del Fuego", 1400000],
+    # Tierra del Fuego - 3
+    [3, 1, "Ushuaia", "8d/7n", "Vuelo Aerolíneas / Jetsmart",
+     "Hotel Arakur ★★★★★ / Hostería Foque ★★", "Parque Nacional Tierra del Fuego", 1400000, False],
 
-    [3, 2, "Tolhuin", "8d/7n",
-     "Vuelo a Ushuaia + transfer ($620.000) o Bus ($200.000)",
-     "Posada de la Madera ($500.000) o Cabañas Altos de Tolhuin ($300.000)",
-     "Lago Fagnano + actividades náuticas", 900000],
+    [3, 2, "Tolhuin", "8d/7n", "Vuelo a Ushuaia + Transfer / Bus",
+     "Posada de la Madera ★★★ / Cabañas Altos de Tolhuin ★★", "Lago Fagnano", 900000, False],
 
-    [3, 3, "Río Grande", "8d/7n",
-     "Vuelo a Río Grande ($550.000) o Bus ($220.000)",
-     "Gran Hotel Río Grande ($700.000) o Depto céntrico ($280.000)",
-     "Pesca deportiva en el río", 850000],
+    [3, 3, "Río Grande", "8d/7n", "Vuelo directo / Bus",
+     "Gran Hotel Río Grande ★★★★ / Depto céntrico ★★", "Pesca deportiva", 850000, False],
 
-    [3, 4, "Cabo San Pablo", "8d/7n",
-     "Vuelo a Río Grande + transfer ($600.000) o Bus ($250.000)",
-     "Estancia San Pablo ($650.000) o Hostería Cabo ($300.000)",
-     "Excursión Faro + Desembarco Desdémona", 950000],
+    [3, 4, "Cabo San Pablo", "8d/7n", "Vuelo a Río Grande + Transfer / Bus",
+     "Estancia San Pablo ★★★ / Hostería Cabo ★★", "Excursión Faro + Desdémona", 950000, False],
 
-    # NEUQUÉN (4)
-    [4, 1, "San Martín de los Andes", "8d/7n",
-     "Vuelo Aerolíneas ($500.000) o Bus ($180.000)",
-     "Hotel Patagonia Plaza ($900.000) o Cabañas Arrayanes ($400.000)",
-     "Chapelco Ski Resort", 1200000],
+    # Neuquén - 4
+    [4, 1, "San Martín de los Andes", "8d/7n", "Vuelo Aerolíneas / Bus",
+     "Hotel Patagonia Plaza ★★★★ / Cabañas Arrayanes ★★", "Chapelco Ski Resort", 1200000, False],
 
-    [4, 2, "Villa La Angostura", "8d/7n",
-     "Vuelo a Bariloche + bus ($520.000) o Bus ($200.000)",
-     "Hostería El Faro ($800.000) o Cabañas Los Ñires ($350.000)",
-     "Bosque de Arrayanes", 1100000],
+    [4, 2, "Villa La Angostura", "8d/7n", "Vuelo a Bariloche + Bus / Bus",
+     "Hostería El Faro ★★★★ / Cabañas Los Ñires ★★", "Bosque de Arrayanes", 1100000, False],
 
-    [4, 3, "Caviahue", "8d/7n",
-     "Vuelo a Neuquén + transfer ($480.000) o Bus ($190.000)",
-     "Hotel Nevado ($700.000) o Hostel Caviahue ($250.000)",
-     "Termas + volcán Copahue", 950000],
+    [4, 3, "Caviahue", "8d/7n", "Vuelo a Neuquén + Transfer / Bus",
+     "Hotel Nevado ★★★★ / Hostel Caviahue ★★", "Termas + Volcán Copahue", 950000, False],
 
-    [4, 4, "Zapala", "8d/7n",
-     "Vuelo a Neuquén + bus ($460.000) o Bus ($170.000)",
-     "Hotel Portal del Pehuén ($600.000) o Depto céntrico ($280.000)",
-     "Parque Laguna Blanca", 850000],
+    [4, 4, "Zapala", "8d/7n", "Vuelo a Neuquén + Bus / Bus",
+     "Hotel Portal del Pehuén ★★★ / Depto céntrico ★★", "Parque Laguna Blanca", 850000, False],
 
-    # RÍO NEGRO (5)
-    [5, 1, "Bariloche", "8d/7n",
-     "Vuelo Aerolíneas ($550.000) o Jetsmart ($480.000) / Bus ($180.000)",
-     "Hotel Edelweiss ($1.000.000) o Hostel Pioneros ($350.000)",
-     "Circuito Chico + Cerro Catedral", 1300000],
+    # Rio Negro - 5
+    [5, 1, "Bariloche", "8d/7n", "Vuelo Aerolíneas / Bus",
+     "Hotel Edelweiss ★★★★ / Hostel Pioneros ★★", "Circuito Chico + Cerro Catedral", 1300000, False],
 
-    [5, 2, "El Bolsón", "8d/7n",
-     "Vuelo a Bariloche + bus ($500.000) o Bus ($200.000)",
-     "Cabañas Piltriquitrón ($450.000) o Hostel Mandala ($200.000)",
-     "Cajón del Azul", 800000],
+    [5, 2, "El Bolsón", "8d/7n", "Vuelo a Bariloche + Bus / Bus",
+     "Cabañas Piltriquitrón ★★★ / Hostel Mandala ★★", "Cajón del Azul", 800000, False],
 
-    [5, 3, "Las Grutas", "8d/7n",
-     "Vuelo a Viedma + bus ($450.000) o Bus ($220.000)",
-     "Hotel Acantilados ($600.000) o Depto frente al mar ($300.000)",
-     "Avistaje de fauna marina", 900000],
+    [5, 3, "Las Grutas", "8d/7n", "Vuelo a Viedma + Bus / Bus",
+     "Hotel Acantilados ★★★ / Depto frente al mar ★★", "Avistaje de fauna marina", 900000, False],
 
-    [5, 4, "Viedma", "8d/7n",
-     "Vuelo Aerolíneas ($400.000) o Bus ($180.000)",
-     "Hotel Austral ($500.000) o Depto céntrico ($250.000)",
-     "Balneario El Cóndor", 750000]
+    [5, 4, "Viedma", "8d/7n", "Vuelo Aerolíneas / Bus",
+     "Hotel Austral ★★★ / Depto céntrico ★★", "Balneario El Cóndor", 750000, False]
 ]
 
 def mostrar_paquete(paquete):
-    print("\n--- Paquete", paquete[1], "---")
+    print("\n ★ Paquete", paquete[1], "★")
     print("Destino:", paquete[2])
     print("Duración:", paquete[3])
     print("Transporte:", paquete[4])
     print("Alojamiento:", paquete[5])
     print("Excursión principal:", paquete[6])
     print("Costo total aprox:", paquete[7])
+    print("Estado:", "Reservado" if paquete[8] else "Disponible")
 
-def buscar_por_provincia(matriz, nro_provincia, i=0, resultados=None):
-    if resultados is None:
-        resultados = []
-    if i >= len(matriz):
-        return resultados
-    if matriz[i][0] == nro_provincia:
-        resultados.append(matriz[i])
-    return buscar_por_provincia(matriz, nro_provincia, i+1, resultados)
+def buscar_por_provincia(matriz, nro_provincia):
+    resultados = []
+    for fila in matriz:
+        if fila[0] == nro_provincia:
+            resultados.append(fila)
+    return resultados
 
-#Programa Principal
+def reservar_paquete(matriz, nro_provincia, nro_paquete):
+    for fila in matriz:
+        if fila[0] == nro_provincia and fila[1] == nro_paquete:
+            if not fila[8]:
+                fila[8] = True
+                print("\n Reserva confirmada para:", fila[2])
+            else:
+                print("\n Ese paquete ya está reservado.")
+            return
+    print("\n No se encontró el paquete.")
+
+# Programa principal
 opcion = 0
-while opcion != 3:
-    print("\n--- Sistema de Paquetes Turísticos ---")
+while opcion != 4:
+    print("\n  ★  Sistema de Paquetes Turísticos ★")
     print("1. Ver paquetes por provincia")
     print("2. Ver todos los destinos")
-    print("3. Salir")
+    print("3. Reservar un paquete")
+    print("4. Salir")
 
     opcion = int(input("Elija una opción: "))
 
@@ -144,8 +115,13 @@ while opcion != 3:
             print("No hay paquetes para esa provincia")
 
     elif opcion == 2:
-        print("\n--- Todos los destinos ---")
+        print("\n ★ Todos los destinos ★")
         for fila in paquetes:
-            print(fila[2], "→", fila[7], "aprox")
+            print(fila[2], "→", fila[7], "aprox", "(", "Reservado" if fila[8] else "Disponible", ")")
 
-
+    elif opcion == 3:
+        prov = int(input("Ingrese número de provincia: "))
+        nro = int(input("Ingrese número de paquete: "))
+        reservar_paquete(paquetes, prov, nro)
+    else:
+        print("¡Hasta luego!")
