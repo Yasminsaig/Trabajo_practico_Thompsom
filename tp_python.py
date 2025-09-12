@@ -166,11 +166,47 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete):
             h_sel = int(input("Ingrese número de alojamiento: ")) - 1
 
             fila[8] = True
+            fila.append(fila[4][t_sel])  # transporte elegido
+            fila.append(fila[5][h_sel])  # alojamiento elegido
+
             print(f"\nReserva confirmada para: {fila[2]}")
             print(f"Transporte elegido: {fila[4][t_sel][0]} - ${fila[4][t_sel][1]}")
             print(f"Alojamiento elegido: {fila[5][h_sel][0]} - ${fila[5][h_sel][1]}")
             return
     print("\nNo se encontró el paquete.")
+
+def paquete_reservado (matriz, nro_provincia, nro_paquete):
+    for fila in matriz:
+        if fila[0] == nro_provincia and fila[1] == nro_paquete and fila[8]:
+            # Info elegida en la reserva
+            destino = fila[2]
+            transporte = fila[9]
+            alojamiento = fila[10]
+
+            # Formato tipo ticket
+            print("-" * 40)
+            print("Agencia de Viajes".center(40))
+            print()
+            print("Av. 9 de julio 279".ljust(20), end="**")
+            print("Tel. 46019-1146".rjust(20))
+            print()
+            print("Reserva N°", str(fila[1]).zfill(8))
+            print()
+            print("Destino:".ljust(15), destino)
+            print("Transporte:".ljust(15), f"{transporte[0]} (${transporte[1]})")
+            print("Alojamiento:".ljust(15), f"{alojamiento[0]} (${alojamiento[1]})")
+            print("-" * 40)
+
+            print("Para realizar el pago final comuniquese con el numero en pantalla")
+            conf = input("¿Confirma la reserva? (s/n): ").strip().lower()
+            if conf == "s":
+                print("\n✅ Reserva confirmada con éxito. ¡Buen viaje!")
+            else:
+                print("\n⚠ Reserva cancelada. Vuelva a seleccionar opciones.")
+                fila[8] = False 
+                reservar_paquete(matriz, nro_provincia, nro_paquete)
+            return
+    print("\n❌ No hay ninguna reserva para mostrar.")
 
 
 # Programa principal
@@ -204,3 +240,4 @@ while opcion != 4:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
