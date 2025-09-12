@@ -166,17 +166,16 @@ def paquete_reservado(matriz, nro_provincia, nro_paquete):
 
 # Programa principal
 opcion = 0
-while opcion != 4:
+while opcion != 3:
     print("\n" + "-" * 50)
     print("SISTEMA DE PAQUETES TURÍSTICOS".rjust(35))  
     print("-" * 50)
     print("1. Ver paquetes por provincia".rjust(35))
-    print("2. Ver todos los destinos".rjust(35))
-    print("3. Reservar un paquete".rjust(35))
-    print("4. Salir".rjust(35))
+    print("2. Reservar un paquete".rjust(35))
+    print("3. Salir".rjust(35))
     print("-" * 50)
     
-    opcion = int(input("Seleccione una opción (1-4): "))
+    opcion = int(input("Seleccione una opción (1-3): "))
 
     if opcion == 1:
         print("1=Chubut, 2=Santa Cruz, 3=Tierra del Fuego, 4=Neuquén, 5=Río Negro")
@@ -188,20 +187,14 @@ while opcion != 4:
 
         else:
             print("No hay paquetes para esa provincia.")
-
     elif opcion == 2:
-        print("\n ★ Todos los destinos ★")
-        for fila in paquetes:
-            estado = "Reservado" if fila[8] else "Disponible"
-            print(f"{fila[2]} → ${fila[7]} aprox ({estado})")
-
-    elif opcion == 3:
+        print("1=Chubut, 2=Santa Cruz, 3=Tierra del Fuego, 4=Neuquén, 5=Río Negro")
         prov = int(input("Ingrese número de provincia: "))
         nro = int(input("Ingrese número de paquete: "))
         reservar_paquete(paquetes, prov, nro)
         paquete_reservado(paquetes, prov, nro)
 
-    elif opcion == 4:
+    elif opcion == 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
