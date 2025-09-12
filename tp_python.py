@@ -17,22 +17,39 @@ paquetes = [
      1500000, False]
 ]
 
-def mostrar_paquete(paquete):
-    print("\n ★ Paquete", paquete[1], "★")
-    print("Destino:", paquete[2])
-    print("Duración:", paquete[3])
-    print("Opciones de transporte:")
-    for i, t in enumerate(paquete[4], 1):
-        print(f"  {i}. {t[0]} - ${t[1]} - {t[2]}")
-    print("Opciones de alojamiento:")
-    for i, h in enumerate(paquete[5], 1):
-        print(f"  {i}. {h[0]} - ${h[1]} - {h[2]}")
-    print("Excursión principal:", paquete[6][0], f"- ${paquete[6][1]}")
-    print("Excursiones opcionales:")
-    for i, e in enumerate(paquete[6][2], 1):
-        print(f"  {i}. {e[0]} - ${e[1]}")
-    print("Costo total aprox por persona:", paquete[7])
-    print("Estado:", "Reservado" if paquete[8] else "Disponible")
+def mostrar_paquete(fila, indice=1):
+    destino = fila[2]
+    transporte = fila[4][0]  
+    alojamiento = fila[5][0]  
+    excursion_principal = fila[6] 
+
+    print("-" * 60)
+    titulo = f"PAQUETE {indice}"
+    print(titulo.rjust((60 + len(titulo)) // 2))
+    print("-" * 60)
+
+    print("Destino:".ljust(20), destino)
+    print("Duración:".ljust(20), fila[3])
+
+    print("\nTransporte:")
+    for j, t in enumerate(fila[4], 1):
+        print(f"  {j}. {t[0]} - ${t[1]} - {t[2]}")
+
+    print("\nAlojamiento:")
+    for j, h in enumerate(fila[5], 1):
+        print(f"  {j}. {h[0]} - ${h[1]} - {h[2]}")
+
+    print("\nExcursión principal:".ljust(20), f"{excursion_principal[0]} - ${excursion_principal[1]}")
+
+    if len(excursion_principal) > 2 and isinstance(excursion_principal[2], list):
+        print("\nExcursiones opcionales:")
+        for j, e in enumerate(excursion_principal[2], 1):
+            print(f"  {j}. {e[0]} - ${e[1]}")
+
+    precio_aprox = transporte[1] + alojamiento[1] + excursion_principal[1]
+    print("\nPrecio aproximado del paquete: $", precio_aprox)
+    print("-" * 60)
+    print()
 
 
 def buscar_por_provincia(matriz, nro_provincia):
@@ -150,21 +167,25 @@ def paquete_reservado(matriz, nro_provincia, nro_paquete):
 # Programa principal
 opcion = 0
 while opcion != 4:
-    print("\n  ★  Sistema de Paquetes Turísticos ★")
-    print("1. Ver paquetes por provincia")
-    print("2. Ver todos los destinos")
-    print("3. Reservar un paquete")
-    print("4. Salir")
-
-    opcion = int(input("Elija una opción: "))
+    print("\n" + "-" * 50)
+    print("SISTEMA DE PAQUETES TURÍSTICOS".rjust(35))  
+    print("-" * 50)
+    print("1. Ver paquetes por provincia".rjust(35))
+    print("2. Ver todos los destinos".rjust(35))
+    print("3. Reservar un paquete".rjust(35))
+    print("4. Salir".rjust(35))
+    print("-" * 50)
+    
+    opcion = int(input("Seleccione una opción (1-4): "))
 
     if opcion == 1:
         print("1=Chubut, 2=Santa Cruz, 3=Tierra del Fuego, 4=Neuquén, 5=Río Negro")
         prov = int(input("Ingrese número de provincia: "))
         resultados = buscar_por_provincia(paquetes, prov)
         if resultados:
-            for r in resultados:
-                mostrar_paquete(r)
+            for i, r in enumerate(resultados, start=1):
+                mostrar_paquete(r, i)
+
         else:
             print("No hay paquetes para esa provincia.")
 
