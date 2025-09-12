@@ -235,9 +235,11 @@ while opcion != 4:
         resultados = buscar_por_provincia(paquetes, prov)
         nro = int(input("Ingrese número de paquete: "))
         reservar_paquete(paquetes, prov, nro)
+        paquete_reservado(paquetes, prov, nro)
 
     elif opcion == 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
