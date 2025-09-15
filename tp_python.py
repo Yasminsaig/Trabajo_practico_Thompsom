@@ -64,6 +64,68 @@ paquetes = [
        ["Paseo náutico (avistaje de delfines)", 170000]]],
      2000000, False],
     
+    # Santa Cruz - 1
+    [2, 1, "El Calafate", "8d/7n",
+     [["Vuelo Aerolíneas Argentinas", 1200000, "Vuelo ida y vuelta (3:20 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo JetSMART", 600000, "Vuelo ida y vuelta. Incluye mochila"],
+      ["Vuelo Aerolíneas Argentinas (con escala en Río Gallegos)", 950000, "Vuelo ida y vuelta (6:00 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Micro Plusmar semicama", 180000, "Ida y vuelta (36 hs). Incluye mochila y valija mediana"],
+      ["Micro Plusmar cama", 250000, "Ida y vuelta (36 hs). Incluye mochila y valija mediana"]],
+     [["Hotel Xelena ★★★★", 1500000, "Incluye desayuno, piscina climatizada, spa, gimnasio, cancelación gratis. Costo con impuestos incluidos"],
+      ["Hotel Sierra Nevada ★★★", 800000, "Incluye desayuno, recepción 24 horas, cancelación gratis. Costo con impuestos incluidos"]],
+     ["Pasarelas del Glaciar Perito Moreno", 90000,
+      [["Minitrekking sobre el Glaciar Perito Moreno", 300000],
+       ["Navegación Todo Glaciares (Ríos de Hielo)", 250000],
+       ["Safari 4x4 Nativo Experience", 120000],
+       ["Día de campo en Estancia Nibepo Aike", 180000]]],
+     2890000, False],
+    
+    # Santa Cruz - 2
+    [2, 2, "Río Gallegos", "6d/5n",
+     [["Vuelo Aerolíneas Argentinas", 750000, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo Aerolíneas Argentinas (tarifa básica)", 350000, "Vuelo ida y vuelta. Incluye mochila y carry-on"],
+      ["Micro Marga semicama", 120000, "Ida y vuelta (28 hs). Incluye mochila y valija mediana"],
+      ["Micro Marga cama", 180000, "Ida y vuelta (28 hs). Incluye mochila y valija mediana"]],
+     [["Hotel Patagonia ★★★", 1000000, "Incluye desayuno, estacionamiento gratis, servicio de conserjería. Costo con impuestos incluidos"],
+      ["Departamento céntrico tipo studio", 500000, "Incluye cocina equipada, cancelación gratis. Costo con impuestos incluidos"]],
+     ["City Tour Histórico + Museo de los Pioneros", 50000,
+      [["Parque Nacional Monte León", 120000],
+       ["Reserva Costera Urbana (avistaje de aves)", 70000],
+       ["Día de campo en estancia", 90000]]],
+     1400000, False],
+    
+    # Santa Cruz - 3    
+    [2, 3, "El Chaltén", "8d/7n",
+     [["Vuelo Aerolíneas Argentinas + micro FTE–Chaltén", 1300000, "Vuelo ida y vuelta (BUE–FTE) + micro ida y vuelta. Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo JetSMART + micro FTE–Chaltén", 700000, "Vuelo ida y vuelta + micro ida y vuelta. Incluye mochila"],
+      ["Vuelo Aerolíneas Argentinas (con escala) + micro FTE–Chaltén", 1000000, "Vuelo ida y vuelta + micro ida y vuelta. Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Micro Marga semicama", 200000, "Ida y vuelta (38 hs). Incluye mochila y valija mediana"],
+      ["Micro Marga cama", 280000, "Ida y vuelta (38 hs). Incluye mochila y valija mediana"]],
+     [["Hostería Los Álamos ★★★", 1100000, "Incluye desayuno, vista a la montaña, cancelación gratis. Costo con impuestos incluidos"],
+      ["Departamento/cabaña con cocina equipada", 550000, "Incluye ropa de cama, toallas, cancelación gratis"]],
+     ["Traslado FTE–Chaltén ida y vuelta + trekking autoguiado Laguna Capri", 70000,
+      [["Trekking guiado a Laguna de los Tres", 180000],
+       ["Navegación Lago del Desierto", 150000],
+       ["Rafting en Río de las Vueltas", 170000],
+       ["Full Day Vuelta al Hielo", 250000]]],
+     2200000, False],
+    
+    # Santa Cruz - 4
+    [2, 4, "El Calafate + El Chaltén", "8d/7n",
+     [["Vuelo Aerolíneas Argentinas (4 personas)", 3800000, "Vuelos ida y vuelta para 4 personas. Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo JetSMART (4 personas)", 2400000, "Vuelos ida y vuelta para 4 personas. Incluye mochila y carry-on"],
+      ["Vuelo combinado (ida low cost / vuelta regular) (4 personas)", 2800000, "Vuelos ida y vuelta para 4 personas. Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Micro Plusmar semicama (4 personas)", 600000, "Ida y vuelta (36 hs). Incluye mochila y valija mediana"],
+      ["Micro Plusmar cama (4 personas)", 900000, "Ida y vuelta (36 hs). Incluye mochila y valija mediana"]],
+     [["Departamento de 2 dormitorios (vista al lago)", 3000000, "Incluye cocina equipada, 2 baños, ropa de cama, cancelación gratis. Costo con impuestos incluidos"],
+      ["Cabaña familiar con jardín", 1200000, "Incluye cocina, baño, artículos de aseo, traslado al aeropuerto"]],
+     ["Parque Nacional Los Glaciares – Pasarelas del Perito Moreno", 320000,
+      [["Navegación Todo Glaciares", 1000000],
+       ["Minitrekking en el Perito Moreno", 1200000],
+       ["Cabalgata familiar", 600000],
+       ["Día de nieve en Río Turbio (Valdelen)", 800000]]],
+     5200000, False],
+    
     # Tierra del Fuego - 1
     [3, 1, "Ushuaia", "8d/7n",
      [["Vuelo Aerolíneas Argentinas", 1273075, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
@@ -367,6 +429,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
