@@ -200,7 +200,7 @@ paquetes = [
        ["Excursión a cerro Chapelco y Mirador Arrayan", 110799]]],
      1275007, False],
 
-# Neuquén - 2
+   # Neuquén - 2
     [4, 2, "Villa La Angostura", "7d/6n",
      [["Vuelo Aerolíneas Argentinas", 410000, "Vuelo ida y vuelta (2h15m). Incluye mochila o cartera, carry-on y asiento a elección"],
       ["Vuelo JetSMART", 361446, "Vuelo ida y vuelta (2h15m). Incluye mochila o cartera"],
@@ -214,6 +214,36 @@ paquetes = [
        ["Excursión a Villa Traful y Valle Encantado", 75000],
        ["Travesía en Kayak y Picnic en Villa La Angostura", 95000]]],
      2450000, False],
+
+   # Neuquén - 3
+    [4, 3, "San Martín de los Andes / Bariloche", "6d/5n",
+     [["Vuelo Flybondi", 265428, "Vuelo ida y vuelta (2h). Incluye mochila o cartera y carry on"],
+      ["Vuelo Aerolíneas Argentinas", 260000, "Vuelo ida y vuelta (2h20m). Incluye equipaje de mano (ida solamente)"],
+      ["Micro Via Bariloche semicama", 84560, "Ida y vuelta (23h45m). Incluye mochila y valija mediana"],
+      ["Micro Via Bariloche cama", 136400, "Ida y vuelta (23h45m). Incluye mochila y valija mediana"]],
+     [["Hotel Brizo ★★★★", 115545, "Incluye desayuno buffet, pileta al aire libre, WIFI, gimnasio, SPA y bienestar"],
+      ["Correntoso Lake & River Hotel ★★★★★", 335912, "Incluye desayuno gourmet, pileta climatizada y al aire libre, SPA, restaurante y actividades al aire libre"]],
+     ["Circuito de los 7 Lagos", 100000,
+      [["Lago Moreno (kayak + caminata)", 377000],
+       ["Excursión a Villa Meliquina", 43000],
+       ["Aventura en kayak por los Lagos Machónico y Pichi", 76000],
+       ["Cabalgatas por los alrededores de San Martín de los Andes", 85000]]],
+     1182340, False],
+
+   # Neuquén - 4
+    [4, 4, "Caviahue / Lagunas de Epulafquén", "5d/4n",
+     [["Vuelo JetSMART", 237626, "Vuelo ida y vuelta (2h). Incluye mochila o cartera y valija para despachar"],
+      ["Vuelo Aerolíneas Argentinas", 123703, "Vuelo ida y vuelta (2h). Incluye carry-on de 8kg"],
+      ["Micro Via TAC semicama", 80000, "Ida y vuelta (19h). Incluye mochila y valija pequeña"],
+      ["Micro Via TAC cama", 100000, "Ida y vuelta (19h). Incluye mochila y valija pequeña"]],
+     [["Alojamiento local en Caviahue ★★★", 107492, "Incluye desayuno, WIFI gratis y cancelación gratis"],
+      ["Lodge de montaña boutique ★★★★★", 268730, "Incluye suites de lujo, restaurante gourmet, kayak por el río, SPA y masajes"]],
+     ["Lagunas de Epulafquén (senderismo/avistaje)", 50000,
+      [["Esquí / trekking invernal en Caviahue", 120000],
+       ["Mountain Bike", 80000],
+       ["Trekking al Volcán Copahue", 31000],
+       ["Senderismo por la Laguna Escondida", 45000]]],
+     1033904, False],
 
     # Río Negro - 1
     [5, 1, "San Carlos de Bariloche", "8d/7n",
@@ -458,6 +488,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
