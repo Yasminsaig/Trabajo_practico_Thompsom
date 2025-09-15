@@ -200,7 +200,7 @@ paquetes = [
        ["Excursión a cerro Chapelco y Mirador Arrayan", 110799]]],
      1275007, False],
 
-   # Neuquén - 2
+# Neuquén - 2
     [4, 2, "Villa La Angostura", "7d/6n",
      [["Vuelo Aerolíneas Argentinas", 410000, "Vuelo ida y vuelta (2h15m). Incluye mochila o cartera, carry-on y asiento a elección"],
       ["Vuelo JetSMART", 361446, "Vuelo ida y vuelta (2h15m). Incluye mochila o cartera"],
@@ -215,7 +215,7 @@ paquetes = [
        ["Travesía en Kayak y Picnic en Villa La Angostura", 95000]]],
      2450000, False],
 
-   # Neuquén - 3
+# Neuquén - 3
     [4, 3, "San Martín de los Andes / Bariloche", "6d/5n",
      [["Vuelo Flybondi", 265428, "Vuelo ida y vuelta (2h). Incluye mochila o cartera y carry on"],
       ["Vuelo Aerolíneas Argentinas", 260000, "Vuelo ida y vuelta (2h20m). Incluye equipaje de mano (ida solamente)"],
@@ -230,7 +230,7 @@ paquetes = [
        ["Cabalgatas por los alrededores de San Martín de los Andes", 85000]]],
      1182340, False],
 
-   # Neuquén - 4
+# Neuquén - 4
     [4, 4, "Caviahue / Lagunas de Epulafquén", "5d/4n",
      [["Vuelo JetSMART", 237626, "Vuelo ida y vuelta (2h). Incluye mochila o cartera y valija para despachar"],
       ["Vuelo Aerolíneas Argentinas", 123703, "Vuelo ida y vuelta (2h). Incluye carry-on de 8kg"],
@@ -244,6 +244,7 @@ paquetes = [
        ["Trekking al Volcán Copahue", 31000],
        ["Senderismo por la Laguna Escondida", 45000]]],
      1033904, False],
+
 
     # Río Negro - 1
     [5, 1, "San Carlos de Bariloche", "8d/7n",
@@ -488,6 +489,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
