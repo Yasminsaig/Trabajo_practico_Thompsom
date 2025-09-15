@@ -63,7 +63,67 @@ paquetes = [
        ["Punta Tombo por crucero (pingüinos)", 200000],
        ["Paseo náutico (avistaje de delfines)", 170000]]],
      2000000, False],
+    
+    # Tierra del Fuego - 1
+    [3, 1, "Ushuaia", "8d/7n",
+     [["Vuelo Aerolíneas Argentinas", 1273075, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo Flybondi", 595862, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"],
+      ["Vuelo Aerolíneas Argentinas", 1056034, "Vuelo ida y vuelta con escala en Córdoba (13:55 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo Aerolíneas Argentinas", 888063, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"]],
+     [["Hotel Wyndham Garden Hotel del Glaciar ★★★★", 1463873, "Incluye desayuno, spa, gimnasio, traslados al aeropuerto, vista a las mostañas, cancelación gratis. Costo + impuestos"],
+      ["Villa Brescia Hotel ★ ★ ★", 805190, "Incluye desayuno, cancelación gratis. Costo + impuestos"]],
+     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
+      [["Navegación Canal Beagle con Trekk en Islas Bridges", 85545],
+       ["Tren del Fin del Mundo", 81518],
+       ["Paseo de un día de aventura y nieve en el centro de ski Cerro Castór", 137894],
+       ["Canoero Catamaranes (navegación faro del Fin del Mundo)", 102458]]],
+     2834934, False],
 
+     # Tierra del Fuego - 2
+     [3, 2, "Río Grande", "8d/7n",
+     [["Vuelo Aerolíneas Argentinas", 759834, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo Aerolíneas Argentinas", 305800, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"],
+      ["Vuelo Flybondi", 151328, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"],
+      ["Vuelo Aerolíneas Argentinas", 250500, "Vuelo ida y vuelta con escala en Bahía Blanca (3:30 hs). Incluye mochila y carry-on"]],
+     [["Links Apart Hotel ★★★", 1290607, "Incluye desayuno, estacionamiento gratis, cancelación gratis. Costo + impuestos"],
+      ["Departamento Studio Plaza Río Grande", 518240, "Incluye 1 dormitorio, cancelación gratis, vistas a la ciudad una cocina con nevera y horno, y 1 baño con bidet, artículos de aseo gratuitos y lavadora, toallas y ropa de cama. Costo + impuestos"]],
+     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
+      [["Visita al Museo Virginia Choquintel", 35800],
+       ["Visita a la Reserva Natural Urbana del Río Grande", 28500],
+       ["Visita a la Estancia María Behety", 25600],
+       ["Experiencia clásica a los lagos de Escondido y Fagnano", 210114]]],
+     1360614, False],
+
+     # Tierra del Fuego - 3
+     [3, 3, "Tolhuín", "8d/7n",
+     [["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 1336435, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo Flybondi y micro Marga Patagonia semicama", 659222, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila y asiento a elección"],
+      ["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 1019394, "Vuelo ida y vuelta con una escala en Córdoba (13:55 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 994376, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila y carry-on"]],
+     [["Hosteria Kaiken ★★★", 1053754, "Incluye desayuno, vista al lago, estacionamiento gratuito, restaurante, cancelación gratis. Costo + impuestos"],
+      ["Apartamento en Atardeceres mágicos", 470255, "Incluye cocina equipada con nevera y horno, jardín, vistas a la montaña, 1 baño con ducha, toallas y ropa de cama. Costo + impuestos"]],
+     ["Visita a la Reserva Natural Río Valdés", 58500,
+      [["Canotaje en el Lago Fagnano", 120400],
+       ["Visita a Campingheim", 110000],
+       ["Cabalgata en el corazón de la Isla La Mater", 230000],
+       ["Tour de día completo por Cabo San Pablo y Estancia Pirinaica", 264480]]],
+     2177894, False],
+
+     # Tierra del Fuego - 4
+    [3, 4, "Ushuaia (familiar, ideal para 4 personas)", "8d/7n",
+     [["Vuelo Aerolíneas Argentinas y Jetsmart", 963343, "Vuelo ida por Aerolíneas Argentina y vuelta por Jetsmart (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo Flybondi", 597862, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"],
+      ["Vuelo Flybondi y Aerolíneas Argentinas", 682730, "Vuelo ida directo por Flybondi (3:30 hs) y vuelta con escala en Córdoba  por Aerlíneas Argentinas (9:10 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
+      ["Vuelo Flybondi", 153128, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"]],
+     [["Apartamento Infinity Sky Deluxe", 742810, "Incluye apartamento de dos dormitorios con camas individuales, vista al mar, balcón, cocina equipada, dos baños con bidet y ducha, toallas, ropa de cama, admite mascotas y cancelación gratis. Costo + impuestos"],
+      ["El Refugio de Nino Cabañas", 250722, "Incluye apartamento de un dormitorio con una cama doble, dos sofás camas, cocina equipada, jardín, 1 baño con bidet, ducha, artículos de aseo gratuitos toallas, ropa de cama, admite mascotas, traslado aeropuerto. Costo + impuestos"]],
+     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
+      [["Navegación Canal Beagle con Trekk en Islas Bridges", 85545],
+       ["Tren del Fin del Mundo", 81518],
+       ["Paseo de un día de aventura y nieve en el centro de ski Cerro Castór", 137894],
+       ["Excursión a los Lagos Fueguinos en 4x4", 157000]]],
+     1253871, False],
+    
     # Río Negro - 1
     [5, 1, "San Carlos de Bariloche", "8d/7n",
      [["Vuelo Aerolíneas Argentinas", 654879, "Vuelo ida y vuelta (2h25m/2h05m). Incluye mochila, carry-on y equipaje a despachar"],
@@ -124,66 +184,6 @@ paquetes = [
        ["Paseo histórico Manzana Fundacional Viedma y Carmen de Patagones", 40000],
        ["Avistaje fauna marina en desembocadura Río Negro", 85000]]],
      1135000, False]
-
-     # Tierra del Fuego - 1
-    [3, 1, "Ushuaia", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 1273075, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi", 595862, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"],
-      ["Vuelo Aerolíneas Argentinas", 1056034, "Vuelo ida y vuelta con escala en Córdoba (13:55 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas", 888063, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"]],
-     [["Hotel Wyndham Garden Hotel del Glaciar ★★★★", 1463873, "Incluye desayuno, spa, gimnasio, traslados al aeropuerto, vista a las mostañas, cancelación gratis. Costo + impuestos"],
-      ["Villa Brescia Hotel ★ ★ ★", 805190, "Incluye desayuno, cancelación gratis. Costo + impuestos"]],
-     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
-      [["Navegación Canal Beagle con Trekk en Islas Bridges", 85545],
-       ["Tren del Fin del Mundo", 81518],
-       ["Paseo de un día de aventura y nieve en el centro de ski Cerro Castór", 137894],
-       ["Canoero Catamaranes (navegación faro del Fin del Mundo)", 102458]]],
-     2834934, False],
-
-     # Tierra del Fuego - 2
-     [3, 2, "Río Grande", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 759834, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas", 305800, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"],
-      ["Vuelo Flybondi", 151328, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"],
-      ["Vuelo Aerolíneas Argentinas", 250500, "Vuelo ida y vuelta con escala en Bahía Blanca (3:30 hs). Incluye mochila y carry-on"]],
-     [["Links Apart Hotel ★★★", 1290607, "Incluye desayuno, estacionamiento gratis, cancelación gratis. Costo + impuestos"],
-      ["Departamento Studio Plaza Río Grande", 518240, "Incluye 1 dormitorio, cancelación gratis, vistas a la ciudad una cocina con nevera y horno, y 1 baño con bidet, artículos de aseo gratuitos y lavadora, toallas y ropa de cama. Costo + impuestos"]],
-     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
-      [["Visita al Museo Virginia Choquintel", 35800],
-       ["Visita a la Reserva Natural Urbana del Río Grande", 28500],
-       ["Visita a la Estancia María Behety", 25600],
-       ["Experiencia clásica a los lagos de Escondido y Fagnano", 210114]]],
-     1360614, False],
-
-     # Tierra del Fuego - 3
-     [3, 3, "Tolhuín", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 1336435, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi y micro Marga Patagonia semicama", 659222, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 1019394, "Vuelo ida y vuelta con una escala en Córdoba (13:55 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 994376, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila y carry-on"]],
-     [["Hosteria Kaiken ★★★", 1053754, "Incluye desayuno, vista al lago, estacionamiento gratuito, restaurante, cancelación gratis. Costo + impuestos"],
-      ["Apartamento en Atardeceres mágicos", 470255, "Incluye cocina equipada con nevera y horno, jardín, vistas a la montaña, 1 baño con ducha, toallas y ropa de cama. Costo + impuestos"]],
-     ["Visita a la Reserva Natural Río Valdés", 58500,
-      [["Canotaje en el Lago Fagnano", 120400],
-       ["Visita a Campingheim", 110000],
-       ["Cabalgata en el corazón de la Isla La Mater", 230000],
-       ["Tour de día completo por Cabo San Pablo y Estancia Pirinaica", 264480]]],
-     2177894, False],
-
-     # Tierra del Fuego - 4
-    [3, 1, "Ushuaia (familiar, ideal para 4 personas)", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas y Jetsmart", 963343, "Vuelo ida por Aerolíneas Argentina y vuelta por Jetsmart (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi", 597862, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"],
-      ["Vuelo Flybondi y Aerolíneas Argentinas", 682730, "Vuelo ida directo por Flybondi (3:30 hs) y vuelta con escala en Córdoba  por Aerlíneas Argentinas (9:10 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi", 153128, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"]],
-     [["Apartamento Infinity Sky Deluxe", 742810, "Incluye apartamento de dos dormitorios con camas individuales, vista al mar, balcón, cocina equipada, dos baños con bidet y ducha, toallas, ropa de cama, admite mascotas y cancelación gratis. Costo + impuestos"],
-      ["El Refugio de Nino Cabañas", 250722, "Incluye apartamento de un dormitorio con una cama doble, dos sofás camas, cocina equipada, jardín, 1 baño con bidet, ducha, artículos de aseo gratuitos toallas, ropa de cama, admite mascotas, traslado aeropuerto. Costo + impuestos"]],
-     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
-      [["Navegación Canal Beagle con Trekk en Islas Bridges", 85545],
-       ["Tren del Fin del Mundo", 81518],
-       ["Paseo de un día de aventura y nieve en el centro de ski Cerro Castór", 137894],
-       ["Excursión a los Lagos Fueguinos en 4x4", 157000]]],
-     1253871, False],
 ]
 
 def mostrar_paquete(fila, indice=1):
@@ -367,5 +367,6 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
