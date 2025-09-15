@@ -246,8 +246,9 @@ paquetes = [
        ["Paseo histórico Manzana Fundacional Viedma y Carmen de Patagones", 40000],
        ["Avistaje fauna marina en desembocadura Río Negro", 85000]]],
      1135000, False]
+    
     # Neuquén - 1
-       [2, 1, "Ciudad de Neuquén", "8d/7n",
+    [2, 1, "Ciudad de Neuquén", "8d/7n",
    [["Vuelo JetSMART", 237626, "Vuelo ida y vuelta (2h). Incluye mochila o cartera y una valija para despachar"],
     ["Vuelo Aerolíneas Argentinas", 123703, "Vuelo ida y vuelta (2h). Incluye carry-on de 8kg"],
     ["Micro Via Bariloche semicama", 78000, "Ida y vuelta (16h40m). Incluye mochila y valija pequeña"],
@@ -261,7 +262,7 @@ paquetes = [
     ["Excursión a cerro Chapelco y Mirador Arrayan", 110799]]],
     1275007, False],
 
-# Neuquén - 2
+    # Neuquén - 2
     [2, 2, "Villa La Angostura", "7d/6n",
    [["Vuelo Aerolíneas Argentinas", 410000, "Vuelo ida y vuelta (2h15m). Incluye mochila o cartera, carry-on y asiento a elección"],
     ["Vuelo JetSMART", 361446, "Vuelo ida y vuelta (2h15m). Incluye mochila o cartera"],
@@ -488,6 +489,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
