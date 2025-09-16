@@ -344,11 +344,13 @@ def buscar_por_provincia(matriz, nro_provincia):
 
 
 def reservar_paquete(matriz, nro_provincia, nro_paquete, contador_reservas):
+    encontrado = False
     for fila in matriz:
         if fila[0] == nro_provincia and fila[1] == nro_paquete:
             if fila[8]:
                 print("\nEse paquete ya está reservado.")
-                return contador_reservas
+                encontrado = True
+                break
 
             print("\nElija una opción de transporte:")
             for i, t in enumerate(fila[4], 1):
@@ -410,10 +412,14 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete, contador_reservas):
                     print(f" - {e[0]} - ${e[1]}")
             else:
                 print("No se eligieron excursiones adicionales.")
-            return contador_reservas
 
-    print("\nNo se encontró el paquete.")
-    return contador_reservas
+            encontrado = True
+            break  
+
+    if not encontrado:
+        print("\nNo se encontró el paquete.")  
+
+    return contador_reservas  
 
 def paquete_reservado(matriz, nro_provincia, nro_paquete):
     for fila in matriz:
@@ -495,6 +501,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
