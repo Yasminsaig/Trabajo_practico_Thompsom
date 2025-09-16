@@ -343,12 +343,12 @@ def buscar_por_provincia(matriz, nro_provincia):
     return [fila for fila in matriz if fila[0] == nro_provincia]
 
 
-def reservar_paquete(matriz, nro_provincia, nro_paquete):
+def reservar_paquete(matriz, nro_provincia, nro_paquete, contador_reservas):
     for fila in matriz:
         if fila[0] == nro_provincia and fila[1] == nro_paquete:
             if fila[8]:
                 print("\nEse paquete ya está reservado.")
-                return
+                return contador_reservas
 
             print("\nElija una opción de transporte:")
             for i, t in enumerate(fila[4], 1):
@@ -397,8 +397,11 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete):
             fila.append(fila[5][h_sel])
             fila.append(excursiones_extra)
 
-
+            fila.append(contador_reservas)
             print(f"\nReserva confirmada para: {fila[2]}")
+            print(f"Número de reserva: {str(contador_reservas).zfill(2)}")
+            contador_reservas += 1 
+
             print(f"Transporte elegido: {fila[4][t_sel][0]} - ${fila[4][t_sel][1]}")
             print(f"Alojamiento elegido: {fila[5][h_sel][0]} - ${fila[5][h_sel][1]}")
             if excursiones_extra:
@@ -407,9 +410,10 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete):
                     print(f" - {e[0]} - ${e[1]}")
             else:
                 print("No se eligieron excursiones adicionales.")
-            return
+            return contador_reservas
 
     print("\nNo se encontró el paquete.")
+    return contador_reservas
 
 def paquete_reservado(matriz, nro_provincia, nro_paquete):
     for fila in matriz:
@@ -425,7 +429,7 @@ def paquete_reservado(matriz, nro_provincia, nro_paquete):
             print("Av. 9 de julio 279".ljust(20), end="**")
             print("Tel. 46019-1146".rjust(20))
             print()
-            print("Reserva N°", str(fila[1]).zfill(8))
+            print("Reserva N°", str(fila[-1]).zfill(8))  
             print()
             print("Destino:".ljust(15), destino)
             print("Transporte:".ljust(15), f"{transporte[0]} (${transporte[1]})")
@@ -447,20 +451,17 @@ def paquete_reservado(matriz, nro_provincia, nro_paquete):
             print("-" * 40)
 
             print("Para realizar el pago final comuníquese con el número en pantalla")
-            conf = input("¿Confirma la reserva? (Si/No): ").strip().capitalize()
+            conf = input("¿Confirma la reserva? (si/no): ").strip().lower()
 
-            if conf == "Si":
+            if conf == "si":
                 print("\n✅ Reserva confirmada con éxito. ¡Buen viaje!")
             else:
                 print("\n⚠ Reserva cancelada. Vuelva a seleccionar opciones.")
                 fila[8] = False 
-                reservar_paquete(matriz, nro_provincia, nro_paquete)
-                paquete_reservado(matriz, nro_provincia, nro_paquete) 
-            return
-    print("\n❌ No hay ninguna reserva para mostrar.")
-
+            return 
 
 # Programa principal
+contador = 1
 opcion = 0
 while opcion != 3:
     print("\n" + "-" * 50)
@@ -484,19 +485,16 @@ while opcion != 3:
         else:
             print("No hay paquetes para esa provincia.")
     elif opcion == 2:
-        print("1 = Chubut, 2 = Santa Cruz, 3 = Tierra del Fuego, 4 = Neuquén, 5 = Río Negro")
+        print("1=Chubut, 2=Santa Cruz, 3=Tierra del Fuego, 4=Neuquén, 5=Río Negro")
         prov = int(input("Ingrese número de provincia: "))
         nro = int(input("Ingrese número de paquete: "))
-        reservar_paquete(paquetes, prov, nro)
+        contador = reservar_paquete(paquetes, prov, nro, contador)
         paquete_reservado(paquetes, prov, nro)
 
     elif opcion == 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
-
-
-
 
 
 
