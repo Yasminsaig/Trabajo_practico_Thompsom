@@ -378,7 +378,6 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete):
 
             while not valido:
                 if opcionales == "0" or opcionales == "":
-                    # no se eligen excursiones
                     valido = True
                 else:
                     indices = opcionales.split(",")
@@ -495,6 +494,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
