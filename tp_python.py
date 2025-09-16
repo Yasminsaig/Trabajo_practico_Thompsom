@@ -23,15 +23,10 @@ paquetes = [
      [["My Pod House ★★★★", 145000, "Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis."],
       ["Departamento Antigua Estación", 665046, "1 dormitorio, living, cocina, parrilla, adaptado PMR, estacionamiento, cancelación gratis."]],
      ["Centro de esquí La Hoya", 16000,
-      [["Pase libre todo el día", 80000],
-       ["Viaje expreso La Trochita (adultos)", 62500],
-       ["Viaje expreso La Trochita (niños)", 44000],
-       ["Viaje expreso La Trochita (universitarios)", 46000],
-       ["Viaje expreso La Trochita (extranjeros)", 109000],
+      [["Viaje expreso La Trochita", 62500],
        ["Pueblo Alto (día completo)", 40000],
        ["Piedra Parada + Cañón de la Buitrera", 192000],
-       ["Cabalgatas", 20000],
-       ["Safari fotográfico", 25000]]],
+       ["Cabalgatas", 20000]]],
      700000, False],
 
     # Chubut - 3
@@ -376,23 +371,33 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete):
             print("\nElija excursiones opcionales (separadas por coma, o 0 para ninguna):")
             for i, e in enumerate(fila[6][2], 1):
                 print(f"{i}. {e[0]} - ${e[1]}")
+
             excursiones_extra = []
+            valido = False
             opcionales = input("Ingrese números de excursiones: ").strip()
-            while True:
+
+            while not valido:
                 if opcionales == "0" or opcionales == "":
-                    break
-                indices = opcionales.split(",")
-                if all(x.isdigit() and 1 <= int(x) <= len(fila[6][2]) for x in indices):
-                    excursiones_extra = [fila[6][2][int(i)-1] for i in indices]
-                    break
+                    # no se eligen excursiones
+                    valido = True
                 else:
-                    print("Opción inválida. Intente nuevamente.")
-                    opcionales = input("Ingrese números de excursiones: ").strip()
+                    indices = opcionales.split(",")
+                    valido = True
+                    for x in indices:
+                        if not (x.isdigit() and 1 <= int(x) <= len(fila[6][2])):
+                            valido = False
+                            break
+                    if valido:
+                        excursiones_extra = [fila[6][2][int(i)-1] for i in indices]
+                    else:
+                        print("Opción inválida. Intente nuevamente.")
+                        opcionales = input("Ingrese números de excursiones: ").strip()
 
             fila[8] = True
             fila.append(fila[4][t_sel])
             fila.append(fila[5][h_sel])
             fila.append(excursiones_extra)
+
 
             print(f"\nReserva confirmada para: {fila[2]}")
             print(f"Transporte elegido: {fila[4][t_sel][0]} - ${fila[4][t_sel][1]}")
@@ -490,7 +495,6 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
-
 
 
 
