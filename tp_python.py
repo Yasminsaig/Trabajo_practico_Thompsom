@@ -447,9 +447,9 @@ def paquete_reservado(matriz, nro_provincia, nro_paquete):
             print("-" * 40)
 
             print("Para realizar el pago final comuníquese con el número en pantalla")
-            conf = input("¿Confirma la reserva? (si/no): ").strip().lower()
+            conf = input("¿Confirma la reserva? (si/no): ").strip().capitalize()
 
-            if conf == "si":
+            if conf == "Si":
                 print("\n✅ Reserva confirmada con éxito. ¡Buen viaje!")
             else:
                 print("\n⚠ Reserva cancelada. Vuelva a seleccionar opciones.")
@@ -494,6 +494,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
