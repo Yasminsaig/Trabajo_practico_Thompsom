@@ -5,8 +5,8 @@ paquetes = [
       ["Vuelo Flybondi", 535000, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
       ["Micro Plusmar semicama", 75000, "Ida y vuelta (19 hs). Incluye mochila y valija mediana"],
       ["Micro Plusmar cama", 100000, "Ida y vuelta (19 hs). Incluye mochila y valija mediana"]],
-     [["Hotel Dazzle by Wyndham ★★★★", 1000904, "Incluye desayuno, spa, gimnasio, admite mascotas, traslados al aeropuerto, vista al mar, cancelación gratis. Costo + impuestos"],
-      ["Hotel Rayentray Hostal ★★", 420005, "Incluye desayuno, cancelación gratis. Costo + impuestos"]],
+     [["Hotel Dazzle by Wyndham ★★★★", 1000904, "Incluye desayuno, spa, gimnasio, admite mascotas, traslados al aeropuerto, vista al mar, cancelación gratis."],
+      ["Hotel Rayentray Hostal ★★", 420005, "Incluye desayuno, cancelación gratis."]],
      ["Península Valdés + avistaje de ballenas", 170000,
       [["Snorkel con lobos marinos y peces", 205000],
        ["Excursión terrestre a Trelew y Gaiman", 175000],
@@ -20,8 +20,8 @@ paquetes = [
       ["Vuelo Flybondi", 360000, "Vuelo ida y vuelta (2h30m). Incluye mochila, carry-on, asiento a elección"],
       ["Micro Plusmar semicama", 85000, "Ida y vuelta (21 hs). Incluye mochila y valija mediana"],
       ["Micro Plusmar cama", 110000, "Ida y vuelta (21 hs). Incluye mochila y valija mediana"]],
-     [["My Pod House ★★★★", 145000, "Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis. Costo + impuestos"],
-      ["Departamento Antigua Estación", 665046, "1 dormitorio, living, cocina, parrilla, adaptado PMR, estacionamiento, cancelación gratis. Costo + impuestos"]],
+     [["My Pod House ★★★★", 145000, "Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis."],
+      ["Departamento Antigua Estación", 665046, "1 dormitorio, living, cocina, parrilla, adaptado PMR, estacionamiento, cancelación gratis."]],
      ["Centro de esquí La Hoya", 16000,
       [["Pase libre todo el día", 80000],
        ["Viaje expreso La Trochita (adultos)", 62500],
@@ -40,8 +40,8 @@ paquetes = [
       ["Vuelo JetSMART", 580058, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, asiento a elección"],
       ["Micro Plusmar semicama", 80000, "Ida y vuelta (20h30m). Incluye mochila y valija mediana"],
       ["Micro Plusmar cama", 110000, "Ida y vuelta (20h30m). Incluye mochila y valija mediana"]],
-     [["Hotel Libertador ★★★", 498980, "Incluye desayuno, restaurante, bar, gimnasio, adaptado PMR, estacionamiento, cancelación gratis. Costo + impuestos"],
-      ["El Colibrí (cabañas de la naturaleza)", 693798, "Incluye habitación, cocina, baño, pileta al aire libre, estacionamiento, cafeteras, cancelación gratis. Costo + impuestos"]],
+     [["Hotel Libertador ★★★", 498980, "Incluye desayuno, restaurante, bar, gimnasio, adaptado PMR, estacionamiento, cancelación gratis."],
+      ["El Colibrí (cabañas de la naturaleza)", 693798, "Incluye habitación, cocina, baño, pileta al aire libre, estacionamiento, cafeteras, cancelación gratis."]],
      ["Paseo aéreo Aeroclub Trelew", 70000,
       [["Paseo náutico (avistaje de delfines)", 185000],
        ["Punta Tombo por tierra (pingüinos)", 150000],
@@ -55,8 +55,8 @@ paquetes = [
       ["Vuelo JetSMART", 230000, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on y asiento a elección"],
       ["Micro Plusmar semicama", 90000, "Ida y vuelta (26 hs). Incluye mochila y valija mediana"],
       ["Micro Plusmar cama", 130000, "Ida y vuelta (26 hs). Incluye mochila y valija mediana"]],
-     [["Lucania Palazzo Hotel ★★★★", 1346000, "Incluye desayuno, gimnasio, restaurante, bar, adaptado PMR, estacionamiento privado, cancelación gratis. Costo + impuestos"],
-      ["Departamento Paisaje 1", 466232, "Incluye 1 dormitorio, living, cocina, elementos para cocinar y estacionamiento. Costo + impuestos"]],
+     [["Lucania Palazzo Hotel ★★★★", 1346000, "Incluye desayuno, gimnasio, restaurante, bar, adaptado PMR, estacionamiento privado, cancelación gratis."],
+      ["Departamento Paisaje 1", 466232, "Incluye 1 dormitorio, living, cocina, elementos para cocinar y estacionamiento."]],
      ["Patagonia Salvaje 4x4 por Rutas", 200000,
       [["Buceo (Snorkel con lobos marinos y peces)", 215000],
        ["Excursión terrestre a Trelew y Gaiman", 195000],
@@ -490,6 +490,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
