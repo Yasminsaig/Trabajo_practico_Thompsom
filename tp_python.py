@@ -253,8 +253,8 @@ paquetes = [
       ["Vuelo Flybondi", 239434, "Vuelo ida y vuelta (2h20m). Incluye mochila y carry-on"],
       ["Micro Chevallier semicama", 156150, "Ida y vuelta (19 hs). Incluye mochila y valija mediana"],
       ["Micro Chevallier cama", 215550, "Ida y vuelta (19 hs). Incluye mochila y valija mediana"]],
-     [["Hotel Patagonia Signature ★★★★", 953346, "Incluye desayuno, spa, gimnasio, traslados al aeropuerto, vista al lago, cancelación gratis. Costo + impuestos"],
-      ["Cabaña Petite ★★★", 781473, "Incluye cocina equipada, lavadora, estacionamiento, cancelación gratis. Costo + impuestos"]],
+     [["Hotel Patagonia Signature ★★★★", 953346, "Incluye desayuno, spa, gimnasio, traslados al aeropuerto, vista al lago, cancelación gratis."],
+      ["Cabaña Petite ★★★", 781473, "Incluye cocina equipada, lavadora, estacionamiento, cancelación gratis."]],
      ["Paseo náutico (avistaje de delfines)", 167000,
       [["Cerro Catedral (ascenso)", 31955],
        ["Excursión terrestre a Trelew y Gaiman", 175000],
@@ -268,8 +268,8 @@ paquetes = [
       ["Vuelo Aerolíneas Argentinas + Micro regional", 550000, "Vuelo ida y vuelta (2h20m) + Micro ida y vuelta (2h10m). Vuelo incluye mochila, carry-on, asiento a elección. Micro incluye mochila y valija mediana"],
       ["Micro ViaBariloche semicama + Micro Busplus", 127800, "Ida y vuelta (25 hs). Incluye mochila y valija mediana"],
       ["Micro ViaBariloche cama + Micro Busplus", 143400, "Ida y vuelta (25 hs). Incluye mochila y valija mediana"]],
-     [["Altos del Sur Cabañas ★★★★★", 719969, "Incluye cocina equipada, terraza con vistas, estacionamiento. Costo + impuestos"],
-      ["Hotel Buena Vida Social Club ★★★", 992861, "Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis. Costo + impuestos"]],
+     [["Altos del Sur Cabañas ★★★★★", 719969, "Incluye cocina equipada, terraza con vistas, estacionamiento."],
+      ["Hotel Buena Vida Social Club ★★★", 992861, "Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis."]],
      ["Lago Puelo + recorrido El Bolsón", 75387,
       [["Feria artesanal", 20000],
        ["Refugio Piltriquitrón", 60000],
@@ -284,8 +284,8 @@ paquetes = [
       ["Vuelo Flybondi a Bahía Blanca + Micro regional", 570000, "Vuelo ida y vuelta (2h) + Micro ida y vuelta (4h10m). Vuelo incluye mochila, carry-on y asiento a elección. Micro incluye mochila y valija mediana"],
       ["Micro Andesmar semicama", 118000, "Ida y vuelta (15h52m). Incluye mochila y valija mediana"],
       ["Micro Andesmar cama", 161000, "Ida y vuelta (15h52m). Incluye mochila y valija mediana"]],
-     [["Médanos Patagonia ★★★★", 1254140, "Cama doble + sofá cama, cocina equipada, balcón vista al mar, cafeteras, cancelación gratis. Con desayuno: $1.463.163 + impuestos"],
-      ["Apart del Golfo ★★★★", 1012453, "Incluye aire acondicionado, TV, cocina equipada, minibar, cancelación gratis. Costo + impuestos"]],
+     [["Médanos Patagonia ★★★★", 1254140, "Cama doble + sofá cama, cocina equipada, balcón vista al mar, cafeteras, cancelación gratis. Con desayuno: $1.463.163"],
+      ["Apart del Golfo ★★★★", 1012453, "Incluye aire acondicionado, TV, cocina equipada, minibar, cancelación gratis."]],
      ["Salinas del Gualicho", 215140,
       [["Snorkel + Fuerte Argentino", 215141],
        ["4x4 por médanos", 95000],
@@ -490,6 +490,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
