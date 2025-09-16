@@ -141,8 +141,8 @@ paquetes = [
        ["Canoero Catamaranes (navegación faro del Fin del Mundo)", 102458]]],
      2834934, False],
 
-     # Tierra del Fuego - 2
-     [3, 2, "Río Grande", "8d/7n",
+    # Tierra del Fuego - 2
+    [3, 2, "Río Grande", "8d/7n",
      [["Vuelo Aerolíneas Argentinas", 759834, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
       ["Vuelo Aerolíneas Argentinas", 305800, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"],
       ["Vuelo Flybondi", 151328, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"],
@@ -156,8 +156,8 @@ paquetes = [
        ["Experiencia clásica a los lagos de Escondido y Fagnano", 210114]]],
      1360614, False],
 
-     # Tierra del Fuego - 3
-     [3, 3, "Tolhuín", "8d/7n",
+    # Tierra del Fuego - 3
+    [3, 3, "Tolhuín", "8d/7n",
      [["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 1336435, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
       ["Vuelo Flybondi y micro Marga Patagonia semicama", 659222, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila y asiento a elección"],
       ["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 1019394, "Vuelo ida y vuelta con una escala en Córdoba (13:55 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
@@ -171,7 +171,7 @@ paquetes = [
        ["Tour de día completo por Cabo San Pablo y Estancia Pirinaica", 264480]]],
      2177894, False],
 
-     # Tierra del Fuego - 4
+    # Tierra del Fuego - 4
     [3, 4, "Ushuaia (familiar, ideal para 4 personas)", "8d/7n",
      [["Vuelo Aerolíneas Argentinas y Jetsmart", 963343, "Vuelo ida por Aerolíneas Argentina y vuelta por Jetsmart (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
       ["Vuelo Flybondi", 597862, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"],
@@ -490,6 +490,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
