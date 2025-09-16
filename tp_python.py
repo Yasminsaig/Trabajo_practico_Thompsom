@@ -470,7 +470,7 @@ while opcion != 3:
     opcion = int(input("Seleccione una opción (1-3): "))
 
     if opcion == 1:
-        print("1=Chubut, 2=Santa Cruz, 3=Tierra del Fuego, 4=Neuquén, 5=Río Negro")
+        print("1 = Chubut, 2 = Santa Cruz, 3 = Tierra del Fuego, 4 = Neuquén, 5 = Río Negro")
         prov = int(input("Ingrese número de provincia: "))
         resultados = buscar_por_provincia(paquetes, prov)
         if resultados:
@@ -490,6 +490,7 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
 
 
