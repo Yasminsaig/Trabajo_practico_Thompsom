@@ -500,7 +500,7 @@ while opcion != 3:
         else:
             print("No hay paquetes para esa provincia.")
     elif opcion == 2:
-        print("1=Chubut, 2=Santa Cruz, 3=Tierra del Fuego, 4=Neuquén, 5=Río Negro")
+        print("1 = Chubut, 2 = Santa Cruz, 3 = Tierra del Fuego, 4 = Neuquén, 5 = Río Negro")
         prov = int(input("Ingrese número de provincia: "))
         nro = int(input("Ingrese número de paquete: "))
         contador_anterior = contador
@@ -515,3 +515,4 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
