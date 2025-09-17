@@ -416,7 +416,7 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete, contador_reservas):
             encontrado = True
             break  
 
-        if not encontrado:
+    if not encontrado:
             print("\nNo se encontró el paquete.")  
 
     return contador_reservas
@@ -517,3 +517,4 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
