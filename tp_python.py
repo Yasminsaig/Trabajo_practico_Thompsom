@@ -467,11 +467,10 @@ def paquete_reservado(matriz, nro_provincia, nro_paquete, suma):
                 fila[8] = False
                 suma_actualizada -= 1
                 if len(fila) > 9:
-                    fila.pop()  # Elimina número de reserva
-                    fila.pop()  # Elimina excursiones extra
-                    fila.pop()  # Elimina alojamiento elegido
-                    fila.pop()  # Elimina transporte elegido
-
+                    fila.pop() 
+                    fila.pop()  
+                    fila.pop()  
+                    fila.pop()  
             break
     return suma_actualizada
 
@@ -496,9 +495,8 @@ while opcion != 3:
         prov = int(input("Ingrese número de provincia: "))
         resultados = buscar_por_provincia(paquetes, prov)
         if resultados:
-            for i, r in enumerate(resultados, start=1):
-                mostrar_paquete(r, i)
-
+            for i, r in enumerate(resultados):
+                mostrar_paquete(r, i + 1)
         else:
             print("No hay paquetes para esa provincia.")
     elif opcion == 2:
@@ -517,4 +515,3 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
-
