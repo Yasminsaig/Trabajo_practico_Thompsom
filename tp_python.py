@@ -419,7 +419,7 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete, contador_reservas):
         if not encontrado:
             print("\nNo se encontró el paquete.")  
 
-        return contador_reservas
+    return contador_reservas
 
 def paquete_reservado(matriz, nro_provincia, nro_paquete, suma):
     suma_actualizada = suma
