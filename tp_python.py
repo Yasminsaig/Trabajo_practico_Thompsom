@@ -412,16 +412,17 @@ def reservar_paquete(matriz, nro_provincia, nro_paquete, contador_reservas):
                     print(f" - {e[0]} - ${e[1]}")
             else:
                 print("No se eligieron excursiones adicionales.")
-
+            
             encontrado = True
             break  
 
-    if not encontrado:
-        print("\nNo se encontró el paquete.")  
+        if not encontrado:
+            print("\nNo se encontró el paquete.")  
 
-    return contador_reservas  
+        return contador_reservas
 
-def paquete_reservado(matriz, nro_provincia, nro_paquete):
+def paquete_reservado(matriz, nro_provincia, nro_paquete, suma):
+    suma_actualizada = suma
     for fila in matriz:
         if fila[0] == nro_provincia and fila[1] == nro_paquete and fila[8]:
             destino = fila[2]
@@ -463,11 +464,21 @@ def paquete_reservado(matriz, nro_provincia, nro_paquete):
                 print("\n✅ Reserva confirmada con éxito. ¡Buen viaje!")
             else:
                 print("\n⚠ Reserva cancelada. Vuelva a seleccionar opciones.")
-                fila[8] = False 
-            return 
+                fila[8] = False
+                suma_actualizada -= 1
+                if len(fila) > 9:
+                    fila.pop()  # Elimina número de reserva
+                    fila.pop()  # Elimina excursiones extra
+                    fila.pop()  # Elimina alojamiento elegido
+                    fila.pop()  # Elimina transporte elegido
+
+            break
+    return suma_actualizada
+
 
 # Programa principal
 contador = 1
+suma = 0
 opcion = 0
 while opcion != 3:
     print("\n" + "-" * 50)
@@ -494,24 +505,15 @@ while opcion != 3:
         print("1=Chubut, 2=Santa Cruz, 3=Tierra del Fuego, 4=Neuquén, 5=Río Negro")
         prov = int(input("Ingrese número de provincia: "))
         nro = int(input("Ingrese número de paquete: "))
+        contador_anterior = contador
         contador = reservar_paquete(paquetes, prov, nro, contador)
-        paquete_reservado(paquetes, prov, nro)
+    
+        if contador > contador_anterior:
+            suma += 1
+        suma = paquete_reservado(paquetes, prov, nro, suma)
+        contador = suma + 1
 
     elif opcion == 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
