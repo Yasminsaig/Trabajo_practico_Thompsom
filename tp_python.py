@@ -328,7 +328,7 @@ def mostrar_paquete(fila, indice=1):
 
     print("\nExcursión principal:".ljust(20), f"{excursion_principal[0]} - ${excursion_principal[1]}")
 
-    if len(excursion_principal) > 2 and isinstance(excursion_principal[2], list):
+    if len(excursion_principal) > 2:
         print("\nExcursiones opcionales:")
         for j, e in enumerate(excursion_principal[2], 1):
             print(f"  {j}. {e[0]} - ${e[1]}")
@@ -515,4 +515,5 @@ while opcion != 3:
         print("¡Hasta luego!")
     else:
         print("Opción inválida.")
+
 
