@@ -1,519 +1,686 @@
-paquetes = [
-    # Chubut - 1
-    [1, 1, "Puerto Madryn", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 654879, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi", 535000, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Micro Plusmar semicama", 75000, "Ida y vuelta (19 hs). Incluye mochila y valija mediana"],
-      ["Micro Plusmar cama", 100000, "Ida y vuelta (19 hs). Incluye mochila y valija mediana"]],
-     [["Hotel Dazzle by Wyndham ★★★★", 1000904, "Incluye desayuno, spa, gimnasio, admite mascotas, traslados al aeropuerto, vista al mar, cancelación gratis."],
-      ["Hotel Rayentray Hostal ★★", 420005, "Incluye desayuno, cancelación gratis."]],
-     ["Península Valdés + avistaje de ballenas", 170000,
-      [["Snorkel con lobos marinos y peces", 205000],
-       ["Excursión terrestre a Trelew y Gaiman", 175000],
-       ["Punta Tombo por crucero (pingüinos)", 198000],
-       ["Paseo náutico (avistaje de delfines)", 167000]]],
-     1500000, False],
+import datetime
+import os
 
-    # Chubut - 2
-    [1, 2, "Esquel", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 420699, "Vuelo ida y vuelta (2h30m). Incluye mochila, carry-on, asiento a elección"],
-      ["Vuelo Flybondi", 360000, "Vuelo ida y vuelta (2h30m). Incluye mochila, carry-on, asiento a elección"],
-      ["Micro Plusmar semicama", 85000, "Ida y vuelta (21 hs). Incluye mochila y valija mediana"],
-      ["Micro Plusmar cama", 110000, "Ida y vuelta (21 hs). Incluye mochila y valija mediana"]],
-     [["My Pod House ★★★★", 145000, "Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis."],
-      ["Departamento Antigua Estación", 665046, "1 dormitorio, living, cocina, parrilla, adaptado PMR, estacionamiento, cancelación gratis."]],
-     ["Centro de esquí La Hoya", 16000,
-      [["Viaje expreso La Trochita", 62500],
-       ["Pueblo Alto (día completo)", 40000],
-       ["Piedra Parada + Cañón de la Buitrera", 192000],
-       ["Cabalgatas", 20000]]],
-     700000, False],
+ARCHIVO_USUARIOS = "usuarios.txt"
+ARCHIVO_PAQUETES = "paquetes.txt"
+ARCHIVO_RESERVAS = "reservas.txt"
+ARCHIVO_TICKET_COUNTER = "ticket_counter.txt"
 
-    # Chubut - 3
-    [1, 3, "Trelew", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 734000, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, asiento a elección"],
-      ["Vuelo JetSMART", 580058, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, asiento a elección"],
-      ["Micro Plusmar semicama", 80000, "Ida y vuelta (20h30m). Incluye mochila y valija mediana"],
-      ["Micro Plusmar cama", 110000, "Ida y vuelta (20h30m). Incluye mochila y valija mediana"]],
-     [["Hotel Libertador ★★★", 498980, "Incluye desayuno, restaurante, bar, gimnasio, adaptado PMR, estacionamiento, cancelación gratis."],
-      ["El Colibrí (cabañas de la naturaleza)", 693798, "Incluye habitación, cocina, baño, pileta al aire libre, estacionamiento, cafeteras, cancelación gratis."]],
-     ["Paseo aéreo Aeroclub Trelew", 70000,
-      [["Paseo náutico (avistaje de delfines)", 185000],
-       ["Punta Tombo por tierra (pingüinos)", 150000],
-       ["Dique Florentino Ameghino (día completo)", 100000],
-       ["Centro Astronómico Trelew", 20000]]],
-     1000000, False],
+#----------------------------------------------------
+#      Funciones de archivos
+#----------------------------------------------------
 
-    # Chubut - 4
-    [1, 4, "Comodoro Rivadavia", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 270058, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on"],
-      ["Vuelo JetSMART", 230000, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on y asiento a elección"],
-      ["Micro Plusmar semicama", 90000, "Ida y vuelta (26 hs). Incluye mochila y valija mediana"],
-      ["Micro Plusmar cama", 130000, "Ida y vuelta (26 hs). Incluye mochila y valija mediana"]],
-     [["Lucania Palazzo Hotel ★★★★", 1346000, "Incluye desayuno, gimnasio, restaurante, bar, adaptado PMR, estacionamiento privado, cancelación gratis."],
-      ["Departamento Paisaje 1", 466232, "Incluye 1 dormitorio, living, cocina, elementos para cocinar y estacionamiento."]],
-     ["Patagonia Salvaje 4x4 por Rutas", 200000,
-      [["Buceo (Snorkel con lobos marinos y peces)", 215000],
-       ["Excursión terrestre a Trelew y Gaiman", 195000],
-       ["Punta Tombo por crucero (pingüinos)", 200000],
-       ["Paseo náutico (avistaje de delfines)", 170000]]],
-     2000000, False],
-    
-    # Santa Cruz - 1
-    [2, 1, "El Calafate", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 1200000, "Vuelo ida y vuelta (3:20 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo JetSMART", 600000, "Vuelo ida y vuelta. Incluye mochila"],
-      ["Vuelo Aerolíneas Argentinas (con escala en Río Gallegos)", 950000, "Vuelo ida y vuelta (6:00 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Micro Plusmar semicama", 180000, "Ida y vuelta (36 hs). Incluye mochila y valija mediana"],
-      ["Micro Plusmar cama", 250000, "Ida y vuelta (36 hs). Incluye mochila y valija mediana"]],
-     [["Hotel Xelena ★★★★", 1500000, "Incluye desayuno, piscina climatizada, spa, gimnasio, cancelación gratis. Costo con impuestos incluidos"],
-      ["Hotel Sierra Nevada ★★★", 800000, "Incluye desayuno, recepción 24 horas, cancelación gratis. Costo con impuestos incluidos"]],
-     ["Pasarelas del Glaciar Perito Moreno", 90000,
-      [["Minitrekking sobre el Glaciar Perito Moreno", 300000],
-       ["Navegación Todo Glaciares (Ríos de Hielo)", 250000],
-       ["Safari 4x4 Nativo Experience", 120000],
-       ["Día de campo en Estancia Nibepo Aike", 180000]]],
-     2890000, False],
-    
-    # Santa Cruz - 2
-    [2, 2, "Río Gallegos", "6d/5n",
-     [["Vuelo Aerolíneas Argentinas", 750000, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas (tarifa básica)", 350000, "Vuelo ida y vuelta. Incluye mochila y carry-on"],
-      ["Micro Marga semicama", 120000, "Ida y vuelta (28 hs). Incluye mochila y valija mediana"],
-      ["Micro Marga cama", 180000, "Ida y vuelta (28 hs). Incluye mochila y valija mediana"]],
-     [["Hotel Patagonia ★★★", 1000000, "Incluye desayuno, estacionamiento gratis, servicio de conserjería. Costo con impuestos incluidos"],
-      ["Departamento céntrico tipo studio", 500000, "Incluye cocina equipada, cancelación gratis. Costo con impuestos incluidos"]],
-     ["City Tour Histórico + Museo de los Pioneros", 50000,
-      [["Parque Nacional Monte León", 120000],
-       ["Reserva Costera Urbana (avistaje de aves)", 70000],
-       ["Día de campo en estancia", 90000]]],
-     1400000, False],
-    
-    # Santa Cruz - 3    
-    [2, 3, "El Chaltén", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas + micro FTE–Chaltén", 1300000, "Vuelo ida y vuelta (BUE–FTE) + micro ida y vuelta. Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo JetSMART + micro FTE–Chaltén", 700000, "Vuelo ida y vuelta + micro ida y vuelta. Incluye mochila"],
-      ["Vuelo Aerolíneas Argentinas (con escala) + micro FTE–Chaltén", 1000000, "Vuelo ida y vuelta + micro ida y vuelta. Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Micro Marga semicama", 200000, "Ida y vuelta (38 hs). Incluye mochila y valija mediana"],
-      ["Micro Marga cama", 280000, "Ida y vuelta (38 hs). Incluye mochila y valija mediana"]],
-     [["Hostería Los Álamos ★★★", 1100000, "Incluye desayuno, vista a la montaña, cancelación gratis. Costo con impuestos incluidos"],
-      ["Departamento/cabaña con cocina equipada", 550000, "Incluye ropa de cama, toallas, cancelación gratis"]],
-     ["Traslado FTE–Chaltén ida y vuelta + trekking autoguiado Laguna Capri", 70000,
-      [["Trekking guiado a Laguna de los Tres", 180000],
-       ["Navegación Lago del Desierto", 150000],
-       ["Rafting en Río de las Vueltas", 170000],
-       ["Full Day Vuelta al Hielo", 250000]]],
-     2200000, False],
-    
-    # Santa Cruz - 4
-    [2, 4, "El Calafate + El Chaltén", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas (4 personas)", 3800000, "Vuelos ida y vuelta para 4 personas. Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo JetSMART (4 personas)", 2400000, "Vuelos ida y vuelta para 4 personas. Incluye mochila y carry-on"],
-      ["Vuelo combinado (ida low cost / vuelta regular) (4 personas)", 2800000, "Vuelos ida y vuelta para 4 personas. Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Micro Plusmar semicama (4 personas)", 600000, "Ida y vuelta (36 hs). Incluye mochila y valija mediana"],
-      ["Micro Plusmar cama (4 personas)", 900000, "Ida y vuelta (36 hs). Incluye mochila y valija mediana"]],
-     [["Departamento de 2 dormitorios (vista al lago)", 3000000, "Incluye cocina equipada, 2 baños, ropa de cama, cancelación gratis. Costo con impuestos incluidos"],
-      ["Cabaña familiar con jardín", 1200000, "Incluye cocina, baño, artículos de aseo, traslado al aeropuerto"]],
-     ["Parque Nacional Los Glaciares – Pasarelas del Perito Moreno", 320000,
-      [["Navegación Todo Glaciares", 1000000],
-       ["Minitrekking en el Perito Moreno", 1200000],
-       ["Cabalgata familiar", 600000],
-       ["Día de nieve en Río Turbio (Valdelen)", 800000]]],
-     5200000, False],
-    
-    # Tierra del Fuego - 1
-    [3, 1, "Ushuaia", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 1273075, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi", 595862, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"],
-      ["Vuelo Aerolíneas Argentinas", 1056034, "Vuelo ida y vuelta con escala en Córdoba (13:55 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas", 888063, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"]],
-     [["Hotel Wyndham Garden Hotel del Glaciar ★★★★", 1463873, "Incluye desayuno, spa, gimnasio, traslados al aeropuerto, vista a las mostañas, cancelación gratis. Costo + impuestos"],
-      ["Villa Brescia Hotel ★ ★ ★", 805190, "Incluye desayuno, cancelación gratis. Costo + impuestos"]],
-     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
-      [["Navegación Canal Beagle con Trekk en Islas Bridges", 85545],
-       ["Tren del Fin del Mundo", 81518],
-       ["Paseo de un día de aventura y nieve en el centro de ski Cerro Castór", 137894],
-       ["Canoero Catamaranes (navegación faro del Fin del Mundo)", 102458]]],
-     2834934, False],
+def limpiar_consola():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-    # Tierra del Fuego - 2
-    [3, 2, "Río Grande", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 759834, "Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas", 305800, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"],
-      ["Vuelo Flybondi", 151328, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"],
-      ["Vuelo Aerolíneas Argentinas", 250500, "Vuelo ida y vuelta con escala en Bahía Blanca (3:30 hs). Incluye mochila y carry-on"]],
-     [["Links Apart Hotel ★★★", 1290607, "Incluye desayuno, estacionamiento gratis, cancelación gratis. Costo + impuestos"],
-      ["Departamento Studio Plaza Río Grande", 518240, "Incluye 1 dormitorio, cancelación gratis, vistas a la ciudad una cocina con nevera y horno, y 1 baño con bidet, artículos de aseo gratuitos y lavadora, toallas y ropa de cama. Costo + impuestos"]],
-     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
-      [["Visita al Museo Virginia Choquintel", 35800],
-       ["Visita a la Reserva Natural Urbana del Río Grande", 28500],
-       ["Visita a la Estancia María Behety", 25600],
-       ["Experiencia clásica a los lagos de Escondido y Fagnano", 210114]]],
-     1360614, False],
+def obtener_siguiente_ticket():
+    ultimo_ticket = 0
+    archivo_contador = None
+    try:
+        archivo_contador = open(ARCHIVO_TICKET_COUNTER, "r")
+        contenido = archivo_contador.read()
+        if contenido:
+            ultimo_ticket = int(contenido)
+    except (FileNotFoundError, ValueError):
+        ultimo_ticket = 0
+    finally:
+        if archivo_contador:
+            archivo_contador.close()
 
-    # Tierra del Fuego - 3
-    [3, 3, "Tolhuín", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 1336435, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi y micro Marga Patagonia semicama", 659222, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 1019394, "Vuelo ida y vuelta con una escala en Córdoba (13:55 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama", 994376, "Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila y carry-on"]],
-     [["Hosteria Kaiken ★★★", 1053754, "Incluye desayuno, vista al lago, estacionamiento gratuito, restaurante, cancelación gratis. Costo + impuestos"],
-      ["Apartamento en Atardeceres mágicos", 470255, "Incluye cocina equipada con nevera y horno, jardín, vistas a la montaña, 1 baño con ducha, toallas y ropa de cama. Costo + impuestos"]],
-     ["Visita a la Reserva Natural Río Valdés", 58500,
-      [["Canotaje en el Lago Fagnano", 120400],
-       ["Visita a Campingheim", 110000],
-       ["Cabalgata en el corazón de la Isla La Mater", 230000],
-       ["Tour de día completo por Cabo San Pablo y Estancia Pirinaica", 264480]]],
-     2177894, False],
+    siguiente_ticket = ultimo_ticket + 1
 
-    # Tierra del Fuego - 4
-    [3, 4, "Ushuaia (familiar, ideal para 4 personas)", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas y Jetsmart", 963343, "Vuelo ida por Aerolíneas Argentina y vuelta por Jetsmart (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi", 597862, "Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on"],
-      ["Vuelo Flybondi y Aerolíneas Argentinas", 682730, "Vuelo ida directo por Flybondi (3:30 hs) y vuelta con escala en Córdoba  por Aerlíneas Argentinas (9:10 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi", 153128, "Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera"]],
-     [["Apartamento Infinity Sky Deluxe", 742810, "Incluye apartamento de dos dormitorios con camas individuales, vista al mar, balcón, cocina equipada, dos baños con bidet y ducha, toallas, ropa de cama, admite mascotas y cancelación gratis. Costo + impuestos"],
-      ["El Refugio de Nino Cabañas", 250722, "Incluye apartamento de un dormitorio con una cama doble, dos sofás camas, cocina equipada, jardín, 1 baño con bidet, ducha, artículos de aseo gratuitos toallas, ropa de cama, admite mascotas, traslado aeropuerto. Costo + impuestos"]],
-     ["Experiencia Parque Nacional Tierra del Fuego", 85545,
-      [["Navegación Canal Beagle con Trekk en Islas Bridges", 85545],
-       ["Tren del Fin del Mundo", 81518],
-       ["Paseo de un día de aventura y nieve en el centro de ski Cerro Castór", 137894],
-       ["Excursión a los Lagos Fueguinos en 4x4", 157000]]],
-     1253871, False],
-    
-    # Neuquén - 1
-    [4, 1, "Ciudad de Neuquén", "8d/7n",
-     [["Vuelo JetSMART", 237626, "Vuelo ida y vuelta (2h). Incluye mochila o cartera y una valija para despachar"],
-      ["Vuelo Aerolíneas Argentinas", 123703, "Vuelo ida y vuelta (2h). Incluye carry-on de 8kg"],
-      ["Micro Via Bariloche semicama", 78000, "Ida y vuelta (16h40m). Incluye mochila y valija pequeña"],
-      ["Micro Via Bariloche cama", 106000, "Ida y vuelta (16h40m). Incluye mochila y valija mediana"]],
-     [["Hotel NEU 354 ★★★★", 639737, "Incluye desayuno tipo buffet, WIFI gratis, gimnasio, servicio de limpieza, recepción 24hs, aire acondicionado, TV por cable y caja fuerte"],
-      ["Hilton Garden Inn Neuquén ★★★★", 1413833, "Incluye habitación climatizada, WIFI gratis, restaurante, gimnasio, 5 salas de reuniones, minibar, limpieza y caja fuerte"]],
-     ["Excursión a Parque Nacional Lanín y Parque Hua Hum", 130768,
-      [["Paseo en barco por los lagos y cascadas de San Martín de los Andes", 130000],
-       ["Museo Carmen Funes (entrada/visita)", 20000],
-       ["Excursión a playa Yuco", 120000],
-       ["Excursión a cerro Chapelco y Mirador Arrayan", 110799]]],
-     1275007, False],
+    archivo_contador_escritura = None
+    try:
+        archivo_contador_escritura = open(ARCHIVO_TICKET_COUNTER, "w")
+        archivo_contador_escritura.write(str(siguiente_ticket))
+    except OSError:
+        pass
+    finally:
+        if archivo_contador_escritura:
+            archivo_contador_escritura.close()
 
-    # Neuquén - 2
-    [4, 2, "Villa La Angostura", "7d/6n",
-     [["Vuelo Aerolíneas Argentinas", 410000, "Vuelo ida y vuelta (2h15m). Incluye mochila o cartera, carry-on y asiento a elección"],
-      ["Vuelo JetSMART", 361446, "Vuelo ida y vuelta (2h15m). Incluye mochila o cartera"],
-      ["Micro Via TAC semicama", 80000, "Ida y vuelta (19 hs). Incluye mochila y valija pequeña"],
-      ["Micro Via TAC cama", 100000, "Ida y vuelta (19 hs). Incluye mochila y valija pequeña"]],
-     [["El Muelle / hotel boutique ★★★★", 134365, "Incluye habitaciones con hermosas vistas, TV, calefacción y SPA"],
-      ["Las Balsas ★★★★★", 403095, "Incluye WIFI, pileta al aire libre y climatizada, SPA, gimnasio y restaurante gourmet"]],
-     ["Navegación a Isla Victoria + Bosque de Arrayanes", 215000,
-      [["Cerro Bayo (excursión de un día)", 100000],
-       ["Circuito Angostura", 31000],
-       ["Excursión a Villa Traful y Valle Encantado", 75000],
-       ["Travesía en Kayak y Picnic en Villa La Angostura", 95000]]],
-     2450000, False],
+    return siguiente_ticket
 
-    # Neuquén - 3
-    [4, 3, "San Martín de los Andes / Bariloche", "6d/5n",
-     [["Vuelo Flybondi", 265428, "Vuelo ida y vuelta (2h). Incluye mochila o cartera y carry on"],
-      ["Vuelo Aerolíneas Argentinas", 260000, "Vuelo ida y vuelta (2h20m). Incluye equipaje de mano (ida solamente)"],
-      ["Micro Via Bariloche semicama", 84560, "Ida y vuelta (23h45m). Incluye mochila y valija mediana"],
-      ["Micro Via Bariloche cama", 136400, "Ida y vuelta (23h45m). Incluye mochila y valija mediana"]],
-     [["Hotel Brizo ★★★★", 115545, "Incluye desayuno buffet, pileta al aire libre, WIFI, gimnasio, SPA y bienestar"],
-      ["Correntoso Lake & River Hotel ★★★★★", 335912, "Incluye desayuno gourmet, pileta climatizada y al aire libre, SPA, restaurante y actividades al aire libre"]],
-     ["Circuito de los 7 Lagos", 100000,
-      [["Lago Moreno (kayak + caminata)", 377000],
-       ["Excursión a Villa Meliquina", 43000],
-       ["Aventura en kayak por los Lagos Machónico y Pichi", 76000],
-       ["Cabalgatas por los alrededores de San Martín de los Andes", 85000]]],
-     1182340, False],
+def realizar_login():
+    print("--- Bienvenido/a al Sistema de Paquetes Turísticos ---")
+    usuario_ingresado = input("Usuario: ")
+    contrasena_ingresada = input("Contraseña: ")
+    acceso_concedido = False
+    archivo_usuarios = None
+    try:
+        archivo_usuarios = open(ARCHIVO_USUARIOS, "rt", encoding='utf-8')
+        for linea in archivo_usuarios:
+            try:
+                usuario_archivo, contrasena_archivo = linea.strip().split(";")
+                if usuario_ingresado == usuario_archivo and contrasena_ingresada == contrasena_archivo:
+                    acceso_concedido = True
+                    break
+            except ValueError:
+                continue
+    except FileNotFoundError:
+        print(f"\nADVERTENCIA: No se encontró '{ARCHIVO_USUARIOS}'. Puede registrar un usuario.")
+    except Exception:
+        print(f"\nERROR: El archivo '{ARCHIVO_USUARIOS}' podría estar corrupto.")
+    finally:
+        if archivo_usuarios:
+            archivo_usuarios.close()
+    return acceso_concedido
 
-    # Neuquén - 4
-    [4, 4, "Caviahue / Lagunas de Epulafquén", "5d/4n",
-     [["Vuelo JetSMART", 237626, "Vuelo ida y vuelta (2h). Incluye mochila o cartera y valija para despachar"],
-      ["Vuelo Aerolíneas Argentinas", 123703, "Vuelo ida y vuelta (2h). Incluye carry-on de 8kg"],
-      ["Micro Via TAC semicama", 80000, "Ida y vuelta (19h). Incluye mochila y valija pequeña"],
-      ["Micro Via TAC cama", 100000, "Ida y vuelta (19h). Incluye mochila y valija pequeña"]],
-     [["Alojamiento local en Caviahue ★★★", 107492, "Incluye desayuno, WIFI gratis y cancelación gratis"],
-      ["Lodge de montaña boutique ★★★★★", 268730, "Incluye suites de lujo, restaurante gourmet, kayak por el río, SPA y masajes"]],
-     ["Lagunas de Epulafquén (senderismo/avistaje)", 50000,
-      [["Esquí / trekking invernal en Caviahue", 120000],
-       ["Mountain Bike", 80000],
-       ["Trekking al Volcán Copahue", 31000],
-       ["Senderismo por la Laguna Escondida", 45000]]],
-     1033904, False],
+def registrar_usuario():
+    print("\n--- REGISTRO DE NUEVO USUARIO ---")
+    usuario_valido = False
+    nuevo_usuario = ""
+    while not usuario_valido:
+        nuevo_usuario = input("Ingrese su nuevo nombre de usuario: ").strip()
+        if not nuevo_usuario:
+            print("Error: El nombre de usuario no puede estar vacío.")
+            continue
 
+        usuario_existe = False
+        archivo_lectura = None
+        try:
+            archivo_lectura = open(ARCHIVO_USUARIOS, "rt", encoding='utf-8')
+            for linea in archivo_lectura:
+                try:
+                    if linea.strip().split(';')[0].lower() == nuevo_usuario.lower():
+                        usuario_existe = True
+                        break
+                except (ValueError, IndexError):
+                    continue
+        except FileNotFoundError:
+            pass
+        finally:
+            if archivo_lectura:
+                archivo_lectura.close()
 
-    # Río Negro - 1
-    [5, 1, "San Carlos de Bariloche", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas", 654879, "Vuelo ida y vuelta (2h25m/2h05m). Incluye mochila, carry-on y equipaje a despachar"],
-      ["Vuelo Flybondi", 239434, "Vuelo ida y vuelta (2h20m). Incluye mochila y carry-on"],
-      ["Micro Chevallier semicama", 156150, "Ida y vuelta (19 hs). Incluye mochila y valija mediana"],
-      ["Micro Chevallier cama", 215550, "Ida y vuelta (19 hs). Incluye mochila y valija mediana"]],
-     [["Hotel Patagonia Signature ★★★★", 953346, "Incluye desayuno, spa, gimnasio, traslados al aeropuerto, vista al lago, cancelación gratis."],
-      ["Cabaña Petite ★★★", 781473, "Incluye cocina equipada, lavadora, estacionamiento, cancelación gratis."]],
-     ["Paseo náutico (avistaje de delfines)", 167000,
-      [["Cerro Catedral (ascenso)", 31955],
-       ["Excursión terrestre a Trelew y Gaiman", 175000],
-       ["Punta Tombo por crucero (pingüinos)", 198000],
-       ["Lago Nahuel Huapi – Isla Victoria y Bosque de Arrayanes", 185000]]],
-     970000, False],
+        if usuario_existe:
+            print("Error: Ese nombre de usuario ya está en uso.")
+        else:
+            usuario_valido = True
 
-    # Río Negro - 2
-    [5, 2, "El Bolsón", "8d/7n",
-     [["Vuelo JetSMART + Micro Busplus", 481770, "Vuelo ida y vuelta (2 hs) + Micro ida y vuelta (2h40m). Vuelo incluye mochila, carry-on, asiento a elección. Micro incluye mochila y valija mediana"],
-      ["Vuelo Aerolíneas Argentinas + Micro regional", 550000, "Vuelo ida y vuelta (2h20m) + Micro ida y vuelta (2h10m). Vuelo incluye mochila, carry-on, asiento a elección. Micro incluye mochila y valija mediana"],
-      ["Micro ViaBariloche semicama + Micro Busplus", 127800, "Ida y vuelta (25 hs). Incluye mochila y valija mediana"],
-      ["Micro ViaBariloche cama + Micro Busplus", 143400, "Ida y vuelta (25 hs). Incluye mochila y valija mediana"]],
-     [["Altos del Sur Cabañas ★★★★★", 719969, "Incluye cocina equipada, terraza con vistas, estacionamiento."],
-      ["Hotel Buena Vida Social Club ★★★", 992861, "Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis."]],
-     ["Lago Puelo + recorrido El Bolsón", 75387,
-      [["Feria artesanal", 20000],
-       ["Refugio Piltriquitrón", 60000],
-       ["Tour cervecerías locales", 45000],
-       ["Cabalgatas", 20000],
-       ["Safari fotográfico", 25000]]],
-     743000, False],
+    nueva_contrasena = input("Ingrese su nueva contraseña: ")
+    archivo_escritura = None
+    try:
+        archivo_escritura = open(ARCHIVO_USUARIOS, "at", encoding='utf-8')
+        archivo_escritura.write(f"{nuevo_usuario};{nueva_contrasena}\n")
+        print("\n¡Usuario registrado con éxito!")
+    except OSError as e:
+        print(f"\nERROR: No se pudo registrar el usuario. {e}")
+    finally:
+        if archivo_escritura:
+            archivo_escritura.close()
 
-    # Río Negro - 3
-    [5, 3, "Las Grutas", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas a Viedma + Micro regional", 620000, "Vuelo ida y vuelta (2h15m) + Micro ida y vuelta (1h30m). Vuelo incluye mochila, carry-on, equipaje a despachar y asiento a elección. Micro incluye mochila y valija mediana"],
-      ["Vuelo Flybondi a Bahía Blanca + Micro regional", 570000, "Vuelo ida y vuelta (2h) + Micro ida y vuelta (4h10m). Vuelo incluye mochila, carry-on y asiento a elección. Micro incluye mochila y valija mediana"],
-      ["Micro Andesmar semicama", 118000, "Ida y vuelta (15h52m). Incluye mochila y valija mediana"],
-      ["Micro Andesmar cama", 161000, "Ida y vuelta (15h52m). Incluye mochila y valija mediana"]],
-     [["Médanos Patagonia ★★★★", 1254140, "Cama doble + sofá cama, cocina equipada, balcón vista al mar, cafeteras, cancelación gratis. Con desayuno: $1.463.163"],
-      ["Apart del Golfo ★★★★", 1012453, "Incluye aire acondicionado, TV, cocina equipada, minibar, cancelación gratis."]],
-     ["Salinas del Gualicho", 215140,
-      [["Snorkel + Fuerte Argentino", 215141],
-       ["4x4 por médanos", 95000],
-       ["Cañadón de las Ostras + El Sótano", 114742],
-       ["Paseo embarcado Bahía de San Antonio (avistaje de fauna marina)", 180000]]],
-     882000, False],
+def cargar_paquetes():
+    lista_de_paquetes = []
+    archivo_paquetes = None
+    try:
+        archivo_paquetes = open(ARCHIVO_PAQUETES, "rt", encoding='utf-8')
+        paquete_actual = None
+        seccion_actual = ""
 
-    # Río Negro - 4
-    [5, 4, "Viedma", "8d/7n",
-     [["Vuelo Aerolíneas Argentinas directo", 450000, "Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección"],
-      ["Vuelo Flybondi a Bahía Blanca + Micro regional", 500000, "Vuelo ida y vuelta (2 hs) + Micro ida y vuelta (2h30m). Vuelo incluye mochila, carry-on y asiento a elección. Micro incluye mochila y valija mediana"],
-      ["Micro Andesmar semicama", 96000, "Ida y vuelta (12h55m). Incluye mochila y valija mediana"],
-      ["Micro Andesmar cama", 186000, "Ida y vuelta (12h55m). Incluye mochila y valija mediana"]],
-     [["Departamento céntrico ★★★", 477260, "Incluye sofás cama, aire acondicionado, TV, cocina equipada, cancelación gratis"],
-      ["Hotel y Casino del Río ★★★★", 1857985, "Incluye TV, minibar, desayuno, cancelación gratis"]],
-     ["Faro Río Negro", 20000,
-      [["Colonia de loros barranqueros", 25000],
-       ["Kayak en la ría", 60000],
-       ["Paseo histórico Manzana Fundacional Viedma y Carmen de Patagones", 40000],
-       ["Avistaje fauna marina en desembocadura Río Negro", 85000]]],
-     1135000, False]
-]
+        for linea in archivo_paquetes:
+            linea = linea.strip()
+            if not linea: continue
 
-def mostrar_paquete(fila, indice=1):
-    destino = fila[2]
-    transporte = fila[4][0]  
-    alojamiento = fila[5][0]  
-    excursion_principal = fila[6] 
+            if linea.startswith('#PAQUETE'):
+                if paquete_actual: lista_de_paquetes.append(paquete_actual)
+                paquete_actual = {}
+                seccion_actual = "paquete"
+            elif linea.startswith('#FIN_PAQUETE'):
+                if paquete_actual:
+                    lista_de_paquetes.append(paquete_actual)
+                    paquete_actual = None
+                seccion_actual = ""
+            elif linea.startswith('#') and paquete_actual is not None:
+                seccion_actual = linea[1:].lower()
+                if seccion_actual not in ["excursion_base", "paquete"]:
+                         paquete_actual[seccion_actual] = []
+            elif seccion_actual and paquete_actual is not None:
+                partes = linea.split(';')
 
-    print("-" * 60)
-    titulo = f"PAQUETE {indice}"
-    print(titulo.rjust((60 + len(titulo)) // 2))
-    print("-" * 60)
-
-    print("Destino:".ljust(20), destino)
-    print("Duración:".ljust(20), fila[3])
-
-    print("\nTransporte:")
-    for j, t in enumerate(fila[4], 1):
-        print(f"  {j}. {t[0]} - ${t[1]} - {t[2]}")
-
-    print("\nAlojamiento:")
-    for j, h in enumerate(fila[5], 1):
-        print(f"  {j}. {h[0]} - ${h[1]} - {h[2]}")
-
-    print("\nExcursión principal:".ljust(20), f"{excursion_principal[0]} - ${excursion_principal[1]}")
-
-    if len(excursion_principal) > 2:
-        print("\nExcursiones opcionales:")
-        for j, e in enumerate(excursion_principal[2], 1):
-            print(f"  {j}. {e[0]} - ${e[1]}")
-
-    precio_aprox = transporte[1] + alojamiento[1] + excursion_principal[1]
-    print("\nPrecio aproximado del paquete: $", precio_aprox)
-    print("-" * 60)
-    print()
-
-
-def buscar_por_provincia(matriz, nro_provincia):
-    return [fila for fila in matriz if fila[0] == nro_provincia]
-
-
-def reservar_paquete(matriz, nro_provincia, nro_paquete, contador_reservas):
-    encontrado = False
-    for fila in matriz:
-        if fila[0] == nro_provincia and fila[1] == nro_paquete:
-            if fila[8]:
-                print("\nEse paquete ya está reservado.")
-                encontrado = True
-                break
-
-            print("\nElija una opción de transporte:")
-            for i, t in enumerate(fila[4], 1):
-                print(f"{i}. {t[0]} - ${t[1]} - {t[2]}")
-            t_sel = -1
-            while t_sel < 0 or t_sel >= len(fila[4]):
-                t_sel = int(input("Ingrese número de transporte: "))-1
-                if t_sel < 0 or t_sel >= len(fila[4]):
-                    print("Opción inválida. Intente nuevamente.")
-
-            print("\nElija una opción de alojamiento:")
-            for i, h in enumerate(fila[5], 1):
-                print(f"{i}. {h[0]} - ${h[1]} - {h[2]}")
-            h_sel = -1
-            while h_sel < 0 or h_sel >= len(fila[5]):
-                h_sel = int(input("Ingrese número de alojamiento: ")) - 1
-                if h_sel < 0 or h_sel >= len(fila[5]):
-                    print("Opción inválida. Intente nuevamente.")
-
-            print("\nElija excursiones opcionales (separadas por coma, o 0 para ninguna):")
-            for i, e in enumerate(fila[6][2], 1):
-                print(f"{i}. {e[0]} - ${e[1]}")
-
-            excursiones_extra = []
-            valido = False
-            opcionales = input("Ingrese números de excursiones: ").strip()
-
-            while not valido:
-                if opcionales == "0" or opcionales == "":
-                    valido = True
+                if seccion_actual == "paquete":
+                    id_str, prov, dest, dur, precio_str, cupo_str = partes
+                    paquete_actual.update({
+                        "id": int(id_str), "provincia": prov, "destino": dest,
+                        "duracion": dur, "precio_base": float(precio_str), "cupo": int(cupo_str)
+                    })
+                elif seccion_actual in ["transporte", "alojamiento"]:
+                    nombre, precio, desc = partes[0], float(partes[1]), partes[2] if len(partes) > 2 else ""
+                    paquete_actual[seccion_actual].append({"nombre": nombre, "precio": precio, "desc": desc})
+                elif seccion_actual == "fechas":
+                    nombre_fecha, valor_fecha = partes[0], partes[1]
+                    paquete_actual[seccion_actual].append({"nombre": nombre_fecha, "fecha": valor_fecha})
                 else:
-                    indices = opcionales.split(",")
-                    valido = True
-                    for x in indices:
-                        if not (x.isdigit() and 1 <= int(x) <= len(fila[6][2])):
-                            valido = False
-                            break
-                    if valido:
-                        excursiones_extra = [fila[6][2][int(i)-1] for i in indices]
+                    nombre, precio = partes[0], float(partes[1])
+                    if seccion_actual == "excursion_base":
+                        paquete_actual[seccion_actual] = {"nombre": nombre, "precio": precio}
                     else:
-                        print("Opción inválida. Intente nuevamente.")
-                        opcionales = input("Ingrese números de excursiones: ").strip()
+                        if seccion_actual not in paquete_actual:
+                            paquete_actual[seccion_actual] = []
+                        paquete_actual[seccion_actual].append({"nombre": nombre, "precio": precio})
 
-            fila[8] = True
-            fila.append(fila[4][t_sel])
-            fila.append(fila[5][h_sel])
-            fila.append(excursiones_extra)
+        if paquete_actual and paquete_actual not in lista_de_paquetes:
+            lista_de_paquetes.append(paquete_actual)
 
-            fila.append(contador_reservas)
-            print(f"\nReserva confirmada para: {fila[2]}")
-            print(f"Número de reserva: {str(contador_reservas).zfill(2)}")
-            contador_reservas += 1 
+    except FileNotFoundError: print(f"\nADVERTENCIA: No se encontró '{ARCHIVO_PAQUETES}'.")
+    except Exception as e: print(f"\nERROR: '{ARCHIVO_PAQUETES}' parece tener un formato incorrecto. Detalle: {e}")
+    finally:
+        if archivo_paquetes: archivo_paquetes.close()
 
-            print(f"Transporte elegido: {fila[4][t_sel][0]} - ${fila[4][t_sel][1]}")
-            print(f"Alojamiento elegido: {fila[5][h_sel][0]} - ${fila[5][h_sel][1]}")
-            if excursiones_extra:
-                print("Excursiones adicionales elegidas:")
-                for e in excursiones_extra:
-                    print(f" - {e[0]} - ${e[1]}")
+    return lista_de_paquetes
+
+def guardar_paquetes(paquetes):
+    archivo_paquetes = None
+    try:
+        archivo_paquetes = open(ARCHIVO_PAQUETES, "wt", encoding='utf-8')
+        for paquete in paquetes:
+            archivo_paquetes.write("#PAQUETE\n")
+            archivo_paquetes.write(f"{paquete['id']};{paquete['provincia']};{paquete['destino']};{paquete['duracion']};{paquete['precio_base']};{paquete['cupo']}\n")
+
+            for seccion, marcador in [('transporte', '#TRANSPORTE'), ('alojamiento', '#ALOJAMIENTO')]:
+                if seccion in paquete and paquete[seccion]:
+                    archivo_paquetes.write(f"{marcador}\n")
+                    for opcion in paquete[seccion]:
+                        archivo_paquetes.write(f"{opcion['nombre']};{opcion['precio']};{opcion.get('desc', '')}\n")
+
+            if 'excursion_base' in paquete and paquete['excursion_base']:
+                archivo_paquetes.write("#EXCURSION_BASE\n")
+                eb = paquete['excursion_base']
+                archivo_paquetes.write(f"{eb['nombre']};{eb['precio']}\n")
+
+            if 'excursiones_adicionales' in paquete and paquete['excursiones_adicionales']:
+                archivo_paquetes.write("#EXCURSIONES_ADICIONALES\n")
+                for opcion in paquete['excursiones_adicionales']:
+                    archivo_paquetes.write(f"{opcion['nombre']};{opcion['precio']}\n")
+
+            if 'fechas' in paquete and paquete['fechas']:
+                archivo_paquetes.write("#FECHAS\n")
+                for opcion in paquete['fechas']:
+                    archivo_paquetes.write(f"{opcion['nombre']};{opcion['fecha']}\n")
+
+            archivo_paquetes.write("#FIN_PAQUETE\n\n")
+    except OSError as e: print(f"\nERROR: No se pudo guardar los cambios. {e}")
+    finally:
+        if archivo_paquetes: archivo_paquetes.close()
+
+def registrar_reserva_en_archivo(ticket, paquete, nombre_cliente, opcion_fecha, opciones_elegidas, precio_final):
+    archivo_reservas = None
+    try:
+        archivo_reservas = open(ARCHIVO_RESERVAS, "at", encoding='utf-8')
+        fecha_reserva = datetime.date.today().strftime('%d/%m/%Y')
+
+        detalles = f"Transporte: {opciones_elegidas['transporte']['nombre']} | Alojamiento: {opciones_elegidas['alojamiento']['nombre']}"
+        if opciones_elegidas.get('excursion_adicional'):
+            detalles += f" | Extra: {opciones_elegidas['excursion_adicional']['nombre']}"
+
+        fecha_nombre = opcion_fecha['nombre'] if opcion_fecha and 'nombre' in opcion_fecha else 'N/A'
+
+        linea = f"{ticket};{paquete['id']};{paquete['destino']};{nombre_cliente};{fecha_reserva};{fecha_nombre};{precio_final:.2f};ACTIVA;{detalles}\n"
+        archivo_reservas.write(linea)
+    except OSError as e: print(f"\nERROR: No se pudo guardar la reserva. {e}")
+    finally:
+        if archivo_reservas: archivo_reservas.close()
+
+#----------------------------------------------------
+#        Funciones auxiliares
+#----------------------------------------------------
+def agrupar_paquetes_por_provincia(paquetes_lista):
+    paquetes_agrupados = {}
+    for paquete in paquetes_lista:
+        provincia = paquete['provincia']
+        if provincia not in paquetes_agrupados:
+            paquetes_agrupados[provincia] = []
+        paquetes_agrupados[provincia].append(paquete)
+    return paquetes_agrupados
+
+def cumple_filtros(paquete, filtros):
+    if 'destino' in filtros and filtros['destino']:
+        if filtros['destino'].lower() not in paquete['destino'].lower():
+            return False
+    if 'precio_max' in filtros:
+        if paquete['precio_base'] > filtros['precio_max']:
+            return False
+    return True
+
+def buscar_recursivo(lista_paquetes, filtros, indice=0):
+    if indice >= len(lista_paquetes):
+        return []
+    resultados_del_resto = buscar_recursivo(lista_paquetes, filtros, indice + 1)
+    paquete_actual = lista_paquetes[indice]
+    if cumple_filtros(paquete_actual, filtros):
+        return [paquete_actual] + resultados_del_resto
+    else:
+        return resultados_del_resto
+
+def seleccionar_opcion(nombre_seccion, lista_opciones, permite_ninguno=False):
+    opcion_valida = False
+    opcion_seleccionada = None
+
+    if not lista_opciones:
+        print(f"No hay opciones disponibles para {nombre_seccion}.")
+        return None
+
+    print(f"\n--- Opciones de {nombre_seccion} ---")
+    for i, opcion in enumerate(lista_opciones, 1):
+        print(f"   {i}. {opcion.get('nombre', opcion)}", end="")
+        if 'precio' in opcion:
+             print(f" (+${opcion['precio']:,.2f})")
+        else:
+             print()
+
+    while not opcion_valida:
+        try:
+            prompt = f"Seleccione Nro de {nombre_seccion} (1-{len(lista_opciones)}"
+            prompt += ", 0 para ninguna): " if permite_ninguno else "): "
+            opcion_num_str = input(prompt)
+            opcion_num = int(opcion_num_str)
+
+            if permite_ninguno and opcion_num == 0:
+                opcion_seleccionada = None
+                opcion_valida = True
+            elif 1 <= opcion_num <= len(lista_opciones):
+                opcion_seleccionada = lista_opciones[opcion_num - 1]
+                opcion_valida = True
             else:
-                print("No se eligieron excursiones adicionales.")
-            
-            encontrado = True
-            break  
+                print("Error: Número fuera de rango.")
+        except ValueError:
+            print("Error: Ingrese un número válido.")
 
-    if not encontrado:
-            print("\nNo se encontró el paquete.")  
+    return opcion_seleccionada
 
-    return contador_reservas
+#----------------------------------------------------
+#        Funciones principales del menú
+#----------------------------------------------------
 
-def paquete_reservado(matriz, nro_provincia, nro_paquete, suma):
-    suma_actualizada = suma
-    for fila in matriz:
-        if fila[0] == nro_provincia and fila[1] == nro_paquete and fila[8]:
-            destino = fila[2]
-            transporte = fila[9]
-            alojamiento = fila[10]
-            excursion_principal = fila[6]  
+def mostrar_detalles_paquete(paquete):
+    limpiar_consola()
+    print("=" * 70)
+    print(f"DETALLES DEL PAQUETE ID: {paquete['id']} - {paquete['destino']}, {paquete['provincia']}")
+    print(f"Duración: {paquete['duracion']} | Cupo actual: {paquete['cupo']}")
+    print(f"Precio Base: ${paquete['precio_base']:,.2f}")
 
-            print("-" * 40)
-            print("Agencia de Viajes".center(40))
-            print()
-            print("Av. 9 de julio 279".ljust(20), end="**")
-            print("Tel. 46019-1146".rjust(20))
-            print()
-            print("Reserva N°", str(fila[-1]).zfill(8))  
-            print()
-            print("Destino:".ljust(15), destino)
-            print("Transporte:".ljust(15), f"{transporte[0]} (${transporte[1]})")
-            print("Alojamiento:".ljust(15), f"{alojamiento[0]} (${alojamiento[1]})")
-            print("Excursión principal:".ljust(20), f"{excursion_principal[0]} (${excursion_principal[1]})")
+    for seccion, titulo in [('transporte', 'Transporte'), ('alojamiento', 'Alojamiento')]:
+        if paquete.get(seccion):
+            print(f"\n--- Opciones de {titulo} ---")
+            for i, opcion in enumerate(paquete[seccion], 1):
+                print(f"   {i}. {opcion['nombre']} (+${opcion['precio']:,.2f})")
+                if opcion.get('desc'):
+                    print(f"     Descripción: {opcion['desc']}")
 
-            total_excursiones = excursion_principal[1]  
-            print("Excursiones opcionales elegidas:")
-            if len(fila) > 11 and fila[11]:
-                for e in fila[11]:
-                    print(f" - {e[0]} (${e[1]})")
-                    total_excursiones += e[1]
+    if paquete.get('fechas'):
+        print("\n--- Fechas ---")
+        for i, opcion in enumerate(paquete['fechas'], 1):
+            print(f"   {i}. {opcion['nombre']}: {opcion['fecha']}")
+
+    excursion_base = paquete.get('excursion_base')
+    if excursion_base and 'nombre' in excursion_base and 'precio' in excursion_base:
+        print(f"\n--- Excursión Incluida ---")
+        print(f"   - {excursion_base['nombre']} (+${excursion_base['precio']:,.2f})")
+
+    excursiones_adicionales = paquete.get('excursiones_adicionales')
+    if excursiones_adicionales:
+        print("\n--- Excursiones Adicionales (Opcionales) ---")
+        for i, opcion in enumerate(excursiones_adicionales, 1):
+            print(f"   {i}. {opcion['nombre']} (+${opcion['precio']:,.2f})")
+
+    print("=" * 70)
+
+def gestionar_vista_de_paquetes(paquetes):
+    if not paquetes:
+        print("\nNo hay paquetes cargados."); return
+
+    paquetes_agrupados = agrupar_paquetes_por_provincia(paquetes)
+    provincias = list(paquetes_agrupados.keys())
+
+    salir_vista = False
+    while not salir_vista:
+        limpiar_consola()
+        print("--- VER PAQUETES (Paso 1: Provincia) ---")
+        for i, prov in enumerate(provincias, 1):
+            print(f"   {i}. {prov}")
+        print("\n   0. Volver al Menú Principal")
+
+        nro_prov_str = input("\nSeleccione el Nro de la Provincia: ")
+        try:
+            nro_prov = int(nro_prov_str)
+            if nro_prov == 0:
+                salir_vista = True; continue 
+
+            if 1 <= nro_prov <= len(provincias):
+                provincia_elegida = provincias[nro_prov - 1]
+                paquetes_de_provincia = paquetes_agrupados[provincia_elegida]
+
+                ver_paquetes = True
+                while ver_paquetes:
+                    limpiar_consola()
+                    print(f"--- PAQUETES EN {provincia_elegida.upper()} ---")
+                    for i, p in enumerate(paquetes_de_provincia, 1):
+                        print(f"   {i}. {p['destino']}") # Muestra el número y destino
+                    print("\n   0. Volver a Provincias")
+
+                    nro_paq_str = input("\nSeleccione el Nro del Paquete para ver detalles: ")
+                    try:
+                        nro_paq = int(nro_paq_str)
+                        if nro_paq == 0:
+                            ver_paquetes = False; continue
+
+                        if 1 <= nro_paq <= len(paquetes_de_provincia):
+                            paquete_elegido = paquetes_de_provincia[nro_paq - 1]
+                            mostrar_detalles_paquete(paquete_elegido) 
+                            input("\nPresione Enter para volver a la lista de paquetes...") 
+                        else:
+                            print("Error: Número de paquete no válido."); input("...")
+                    except ValueError:
+                         print("Error: Ingrese un número."); input("...")
             else:
-                print(" - Ninguna")
+                print("Error: Número de provincia no válido."); input("...")
+        except ValueError:
+            print("Error: Ingrese un número."); input("...")
 
-            monto_total = transporte[1] + alojamiento[1] + total_excursiones
-            print("-" * 40)
-            print(f"Monto total: ${monto_total}")
-            print("-" * 40)
+def iniciar_busqueda_recursiva(paquetes):
+    limpiar_consola()
+    print("--- BÚSQUEDA DE PAQUETES ---"); print("Deje en blanco lo que no quiera filtrar.")
+    filtros = {} 
 
-            print("Para realizar el pago final comuníquese con el número en pantalla")
+    destino_filtro = input("Ingrese destino a buscar: ").strip()
+    if destino_filtro:
+        filtros['destino'] = destino_filtro
+
+    try:
+        precio_max_str = input("Ingrese precio máximo base (o 0 para no filtrar): ").strip()
+        if precio_max_str:
+            precio_max = float(precio_max_str)
+            if precio_max > 0: filtros['precio_max'] = precio_max
+    except ValueError:
+        print("Precio máximo inválido, no se filtrará por precio.")
+
+    resultados = buscar_recursivo(paquetes, filtros)
+
+    print("\n--- RESULTADOS DE LA BÚSQUEDA ---")
+    if not resultados:
+        print("No se encontraron paquetes que coincidan con los criterios.")
+    else:
+        print(f"{'NRO':<5}{'PROVINCIA':<20}{'DESTINO':<45}{'PRECIO BASE':<20}{'CUPO':<5}")
+        print("-" * 100)
+        for i, paquete in enumerate(resultados, 1):
+            print(f"{i:<5}{paquete['provincia']:<20}{paquete['destino']:<45}${paquete['precio_base']:<19,.2f}{paquete['cupo']:<5}")
+
+    input("\nPresione Enter para volver al menú...")
+
+def gestionar_reserva(paquetes):
+    limpiar_consola()
+    print("--- REALIZAR UNA RESERVA ---")
+
+    if not paquetes:
+        print("\nNo hay paquetes para reservar.")
+        input("Presione Enter para volver...")
+        return
+
+    paquetes_agrupados = agrupar_paquetes_por_provincia(paquetes)
+    provincias = list(paquetes_agrupados.keys())
+
+    paquete_elegido = None
+    salir_seleccion = False
+
+    while not salir_seleccion:
+        limpiar_consola()
+        print("--- REALIZAR UNA RESERVA (Paso 1: Provincia) ---")
+        for i, prov in enumerate(provincias, 1):
+            print(f"   {i}. {prov}")
+        print("\n   0. Volver al Menú Principal")
+
+        nro_prov_str = input("\nSeleccione el Nro de la Provincia: ")
+        try:
+            nro_prov = int(nro_prov_str)
+            if nro_prov == 0: return 
+
+            if 1 <= nro_prov <= len(provincias):
+                provincia_elegida = provincias[nro_prov - 1]
+                paquetes_de_provincia = paquetes_agrupados[provincia_elegida]
+
+                seleccionar_paquete = True
+                while seleccionar_paquete: 
+                    limpiar_consola()
+                    print(f"--- REALIZAR UNA RESERVA (Paso 2: Paquete en {provincia_elegida.upper()}) ---")
+                    for i, p in enumerate(paquetes_de_provincia, 1):
+                        print(f"   {i}. {p['destino']} (Cupo: {p['cupo']})")
+                    print("\n   0. Volver a Provincias")
+
+                    nro_paq_str = input("\nSeleccione el Nro del Paquete a reservar: ")
+                    try:
+                        nro_paq = int(nro_paq_str)
+                        if nro_paq == 0:
+                            seleccionar_paquete = False; continue 
+
+                        if 1 <= nro_paq <= len(paquetes_de_provincia):
+                            paquete_elegido = paquetes_de_provincia[nro_paq - 1]
+                            seleccionar_paquete = False 
+                            salir_seleccion = True    
+                        else:
+                            print("Error: Número de paquete no válido."); input("...")
+                    except ValueError:
+                         print("Error: Ingrese un número."); input("...")
+            else:
+                print("Error: Número de provincia no válido."); input("...")
+        except ValueError:
+            print("Error: Ingrese un número."); input("...")
+   
+    if paquete_elegido:
+        if paquete_elegido['cupo'] <= 0:
+            print(f"\nLo sentimos, no hay cupo para {paquete_elegido['destino']}.")
+            input("\nPresione Enter para volver al menú...")
+            return
+
+        mostrar_detalles_paquete(paquete_elegido)
+
+        opcion_transporte = seleccionar_opcion("Transporte", paquete_elegido.get('transporte', []))
+        opcion_alojamiento = seleccionar_opcion("Alojamiento", paquete_elegido.get('alojamiento', []))
+        opcion_fecha = seleccionar_opcion("fecha", paquete_elegido.get('fechas', []))
+
+        if not opcion_transporte or not opcion_alojamiento or not opcion_fecha:
+             print("\nError: Debe seleccionar transporte, alojamiento y fecha para continuar.")
+             input("\nPresione Enter para volver al menú...")
+             return
+
+        excursion_adicional_elegida = None
+        excursiones_adicionales = paquete_elegido.get('excursiones_adicionales')
+        if excursiones_adicionales: 
+            agregar_adicional = input("\n¿Desea agregar una excursión adicional? (si/no): ").strip().lower()
+            while agregar_adicional not in ["si", "no"]:
+                 print("Respuesta no válida. Por favor, ingrese 'si' o 'no'.")
+                 agregar_adicional = input("¿Desea agregar una excursión adicional? (si/no): ").strip().lower()
+            if agregar_adicional == "si":
+                excursion_adicional_elegida = seleccionar_opcion("Excursión Adicional", excursiones_adicionales, permite_ninguno=True)
+
+        conf = input("\n¿Confirma la reserva? (si/no): ").strip().lower()
+        while conf not in ["si", "no"]:
+            print("Respuesta no válida. Por favor, ingrese 'si' o 'no'.")
             conf = input("¿Confirma la reserva? (si/no): ").strip().lower()
 
-            if conf == "si":
-                print("\n✅ Reserva confirmada con éxito. ¡Buen viaje!")
+        if conf == "si":
+            precio_final = paquete_elegido['precio_base'] + opcion_transporte['precio'] + opcion_alojamiento['precio']
+            excursion_base = paquete_elegido.get('excursion_base')
+            if excursion_base and 'precio' in excursion_base:
+                 precio_final += excursion_base['precio']
+            if excursion_adicional_elegida:
+                 precio_final += excursion_adicional_elegida['precio']
+
+            print(f"\nSubtotal del paquete personalizado: ${precio_final:,.2f}")
+
+            if opcion_fecha and 'nombre' in opcion_fecha and opcion_fecha['nombre'].lower() == 'alta temporada':
+                precio_final *= 1.20
+                print(f"Por ser '{opcion_fecha['nombre']}', se aplica un recargo del 20%.")
+
+            print(f"PRECIO FINAL: ${precio_final:,.2f}")
+
+            nombre_cliente = input("Ingrese su nombre completo para la reserva: ").strip()
+            if not nombre_cliente:
+                print("\nReserva cancelada: el nombre no puede estar vacío.")
             else:
-                print("\n⚠ Reserva cancelada. Vuelva a seleccionar opciones.")
-                fila[8] = False
-                suma_actualizada -= 1
-                if len(fila) > 9:
-                    fila.pop() 
-                    fila.pop()  
-                    fila.pop()  
-                    fila.pop()  
-            break
-    return suma_actualizada
+                ticket = obtener_siguiente_ticket()
+                paquete_elegido['cupo'] -= 1 
+                opciones_elegidas = {
+                    'transporte': opcion_transporte,
+                    'alojamiento': opcion_alojamiento,
+                    'excursion_adicional': excursion_adicional_elegida
+                }
 
+                registrar_reserva_en_archivo(ticket, paquete_elegido, nombre_cliente, opcion_fecha, opciones_elegidas, precio_final)
 
-# Programa principal
-contador = 1
-suma = 0
-opcion = 0
-while opcion != 3:
-    print("\n" + "-" * 50)
-    print("SISTEMA DE PAQUETES TURÍSTICOS".rjust(35))  
-    print("-" * 50)
-    print("1. Ver paquetes por provincia".rjust(35))
-    print("2. Reservar un paquete".rjust(35))
-    print("3. Salir".rjust(35))
-    print("-" * 50)
-    
-    opcion = int(input("Seleccione una opción (1-3): "))
+                print(f"\n¡Reserva confirmada con éxito!")
+                print(f"Su número de ticket es: {str(ticket).zfill(8)}")
 
-    if opcion == 1:
-        print("1 = Chubut, 2 = Santa Cruz, 3 = Tierra del Fuego, 4 = Neuquén, 5 = Río Negro")
-        prov = int(input("Ingrese número de provincia: "))
-        resultados = buscar_por_provincia(paquetes, prov)
-        if resultados:
-            for i, r in enumerate(resultados):
-                mostrar_paquete(r, i + 1)
+                guardar_paquetes(paquetes)
         else:
-            print("No hay paquetes para esa provincia.")
-    elif opcion == 2:
-        print("1 = Chubut, 2 = Santa Cruz, 3 = Tierra del Fuego, 4 = Neuquén, 5 = Río Negro")
-        prov = int(input("Ingrese número de provincia: "))
-        nro = int(input("Ingrese número de paquete: "))
-        contador_anterior = contador
-        contador = reservar_paquete(paquetes, prov, nro, contador)
-    
-        if contador > contador_anterior:
-            suma += 1
-        suma = paquete_reservado(paquetes, prov, nro, suma)
-        contador = suma + 1
+            print("\nReserva no confirmada.")
 
-    elif opcion == 3:
-        print("¡Hasta luego!")
+        input("\nPresione Enter para volver al menú...")
+
+
+def gestionar_cancelacion(paquetes):
+    limpiar_consola()
+    print("--- CANCELAR UNA RESERVA ---")
+    try:
+        ticket_a_cancelar_str = input("Ingrese el número de ticket de la reserva a cancelar (o 0 para volver): ")
+        ticket_a_cancelar = int(ticket_a_cancelar_str)
+        if ticket_a_cancelar == 0:
+            return 
+    except ValueError:
+        print("Error: El ticket debe ser un número."); input("\nPresione Enter..."); return
+
+    reservas_actualizadas = [] 
+    reserva_encontrada = False
+    reserva_ya_cancelada = False
+    id_paquete_a_reponer = -1 
+
+    archivo_reservas_lectura = None
+    try:
+        archivo_reservas_lectura = open(ARCHIVO_RESERVAS, "rt", encoding='utf-8')
+        for linea in archivo_reservas_lectura:
+            try:
+                partes = linea.strip().split(';')
+                if int(partes[0]) == ticket_a_cancelar:
+                    reserva_encontrada = True
+                    if partes[7].upper() == "CANCELADA":
+                        reserva_ya_cancelada = True
+                        reservas_actualizadas.append(linea) # 
+                    else:
+                        id_paquete_a_reponer = int(partes[1])
+                        partes[7] = "CANCELADA" 
+                        reservas_actualizadas.append(";".join(partes) + "\n") 
+                else:
+                    reservas_actualizadas.append(linea)
+            except (ValueError, IndexError):
+                reservas_actualizadas.append(linea)
+    except FileNotFoundError:
+        print("Aún no existen reservas para cancelar."); input("\nPresione Enter..."); return
+    finally:
+        if archivo_reservas_lectura: archivo_reservas_lectura.close()
+
+    if not reserva_encontrada:
+        print("Error: No se encontró ninguna reserva con ese número de ticket.")
+    elif reserva_ya_cancelada:
+        print("Esa reserva ya había sido cancelada anteriormente.")
     else:
-        print("Opción inválida.")
+        archivo_reservas_escritura = None
+        try:
+            archivo_reservas_escritura = open(ARCHIVO_RESERVAS, "wt", encoding='utf-8')
+            archivo_reservas_escritura.writelines(reservas_actualizadas) # Escribe las líneas actualizadas
 
+            cupo_repuesto = False
+            for paquete in paquetes:
+                if paquete['id'] == id_paquete_a_reponer:
+                    paquete['cupo'] += 1
+                    cupo_repuesto = True
+                    break 
 
+            if cupo_repuesto:
+                 guardar_paquetes(paquetes)
+
+            print(f"\n¡Reserva del ticket {str(ticket_a_cancelar).zfill(8)} cancelada con éxito!")
+            if cupo_repuesto:
+                print("Se ha restaurado y guardado un cupo al paquete correspondiente.")
+            else:
+                print("ADVERTENCIA: No se encontró el paquete original para reponer el cupo.")
+
+        except OSError as e:
+            print(f"Error al actualizar el archivo de reservas: {e}")
+        finally:
+            if archivo_reservas_escritura: archivo_reservas_escritura.close()
+
+    input("\nPresione Enter para volver al menú...")
+
+#----------------------------------------------------
+#      Función que controla el menú principal
+#----------------------------------------------------
+
+def mostrar_menu_principal(paquetes):
+    salir = False
+    while not salir:
+        limpiar_consola()
+        print("--- MENÚ PRINCIPAL ---")
+        print("1. Ver Paquetes Turísticos")
+        print("2. Buscar Paquete por Criterios")
+        print("3. Realizar una Reserva")
+        print("4. Cancelar una Reserva")
+        print("5. Guardar Cambios y Salir")
+        opcion_str = input("Seleccione una opción: ")
+        try:
+            opcion = int(opcion_str)
+            if opcion == 1: gestionar_vista_de_paquetes(paquetes)
+            elif opcion == 2: iniciar_busqueda_recursiva(paquetes)
+            elif opcion == 3: gestionar_reserva(paquetes)
+            elif opcion == 4: gestionar_cancelacion(paquetes)
+            elif opcion == 5:
+                guardar_paquetes(paquetes)
+                print("\nDatos guardados correctamente.")
+                input("Presione Enter para salir...")
+                salir = True 
+            else:
+                print("\nError: Opción no válida.")
+                input("\nPresione Enter para continuar...")
+        except ValueError:
+            print("\nError: Por favor, ingrese solo números.")
+            input("\nPresione Enter para continuar...")
+
+#----------------------------------------------------
+#        PROGRAMA PRINCIPAL
+#----------------------------------------------------
+
+salir_del_sistema = False
+while not salir_del_sistema:
+    limpiar_consola()
+    print("--- SISTEMA DE GESTIÓN TURÍSTICA ---")
+    print("1. Iniciar Sesión")
+    print("2. Registrar Nuevo Usuario")
+    print("3. Salir")
+    opcion_inicio = input("Seleccione una opción: ")
+
+    if opcion_inicio == '1':
+        if realizar_login():
+            limpiar_consola(); print("¡Acceso concedido!")
+            paquetes_turisticos = cargar_paquetes() 
+            if paquetes_turisticos is not None: 
+                 if not paquetes_turisticos:
+                      print("ADVERTENCIA: No hay paquetes definidos en el archivo.")
+                 mostrar_menu_principal(paquetes_turisticos)
+            else:
+                 print("Error grave al cargar los paquetes. No se puede continuar.")
+                 input("Presione Enter para salir.")
+
+            salir_del_sistema = True 
+        else:
+            print("\nUsuario o contraseña incorrectos.")
+            input("Presione Enter para continuar...")
+
+    elif opcion_inicio == '2':
+        registrar_usuario()
+        input("\nPresione Enter para volver al menú de inicio...")
+
+    elif opcion_inicio == '3':
+        print("\nGracias por usar el sistema.")
+        salir_del_sistema = True 
+
+    else:
+        print("\nOpción no válida. Por favor, intente de nuevo.")
+        input("\nPresione Enter para continuar...") 
