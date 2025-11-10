@@ -1,0 +1,438 @@
+#PAQUETE
+1;Chubut;Puerto Madryn;8d/7n;1500000.0;19
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;654879.0;Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo Flybondi;535000.0;Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Micro Plusmar semicama;75000.0;Ida y vuelta (19 hs). Incluye mochila y valija mediana
+Micro Plusmar cama;100000.0;Ida y vuelta (19 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Hotel Dazzle by Wyndham ★★★★;1000904.0;Incluye desayuno, spa, gimnasio, admite mascotas, traslados al aeropuerto, vista al mar, cancelación gratis.
+Hotel Rayentray Hostal;420005.0;Incluye desayuno, cancelación gratis.
+#EXCURSION_BASE
+Península Valdés + avistaje de ballenas;170000.0
+#EXCURSIONES_ADICIONALES
+Snorkel con lobos marinos y peces;205000.0
+Excursión terrestre a Trelew y Gaiman;175000.0
+Punta Tombo por crucero (pingüinos);198000.0
+Paseo náutico (avistaje de delfines);167000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+2;Chubut;Esquel;8d/7n;700000.0;14
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;420699.0;Vuelo ida y vuelta (2h30m). Incluye mochila, carry-on, asiento a elección
+Vuelo Flybondi;360000.0;Vuelo ida y vuelta (2h30m). Incluye mochila, carry-on, asiento a elección
+Micro Plusmar semicama;85000.0;Ida y vuelta (21 hs). Incluye mochila y valija mediana
+Micro Plusmar cama;110000.0;Ida y vuelta (21 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+My Pod House ★★★★;145000.0;Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis.
+Departamento Antigua Estación;665046.0;1 dormitorio, living, cocina, parrilla, adaptado PMR, estacionamiento, cancelación gratis.
+#EXCURSION_BASE
+Centro de esquí La Hoya;16000.0
+#EXCURSIONES_ADICIONALES
+Viaje expreso La Trochita;62500.0
+Pueblo Alto (día completo);40000.0
+Piedra Parada + Cañón de la Buitrera;192000.0
+Cabalgatas;20000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+3;Chubut;Trelew;8d/7n;1000000.0;15
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;734000.0;Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, asiento a elección
+Vuelo JetSMART;580058.0;Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, asiento a elección
+Micro Plusmar semicama;80000.0;Ida y vuelta (20h30m). Incluye mochila y valija mediana
+Micro Plusmar cama;110000.0;Ida y vuelta (20h30m). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Hotel Libertador★★★;498980.0;Incluye desayuno, restaurante, bar, gimnasio, adaptado PMR, estacionamiento, cancelación gratis.
+El Colibrí (cabañas de la naturaleza);693798.0;Incluye habitación, cocina, baño, pileta al aire libre, estacionamiento, cafeteras, cancelación gratis.
+#EXCURSION_BASE
+Paseo aéreo Aeroclub Trelew;70000.0
+#EXCURSIONES_ADICIONALES
+Paseo náutico (avistaje de delfines);185000.0
+Punta Tombo por tierra (pingüinos);150000.0
+Dique Florentino Ameghino (día completo);100000.0
+Centro Astronómico Trelew;20000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+4;Chubut;Comodoro Rivadavia;8d/7n;2000000.0;10
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;270058.0;Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on
+Vuelo JetSMART;230000.0;Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on y asiento a elección
+Micro Plusmar semicama;90000.0;Ida y vuelta (26 hs). Incluye mochila y valija mediana
+Micro Plusmar cama;130000.0;Ida y vuelta (26 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Lucania Palazzo Hotel★★★★;1346000.0;Incluye desayuno, gimnasio, restaurante, bar, adaptado PMR, estacionamiento privado, cancelación gratis.
+Departamento Paisaje 1;466232.0;Incluye 1 dormitorio, living, cocina, elementos para cocinar y estacionamiento.
+#EXCURSION_BASE
+Patagonia Salvaje 4x4 por Rutas;200000.0
+#EXCURSIONES_ADICIONALES
+Buceo (Snorkel con lobos marinos y peces);215000.0
+Excursión terrestre a Trelew y Gaiman;195000.0
+Punta Tombo por crucero (pingüinos);200000.0
+Paseo náutico (avistaje de delfines);170000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+5;Santa Cruz;El Calafate;8d/7n;2890000.0;10
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;1200000.0;Vuelo ida y vuelta (3:20 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo JetSMART;600000.0;Vuelo ida y vuelta. Incluye mochila
+Micro Plusmar cama;250000.0;Ida y vuelta (36 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Hotel Xelena★★★★;1500000.0;Incluye desayuno, piscina climatizada, spa, gimnasio, cancelación gratis. Costo con impuestos incluidos
+Hotel Sierra Nevada ★★★;800000.0;Incluye desayuno, recepción 24 horas, cancelación gratis. Costo con impuestos incluidos
+#EXCURSION_BASE
+Pasarelas del Glaciar Perito Moreno;90000.0
+#EXCURSIONES_ADICIONALES
+Minitrekking sobre el Glaciar Perito Moreno;300000.0
+Navegación Todo Glaciares (Ríos de Hielo);250000.0
+Safari 4x4 Nativo Experience;120000.0
+Día de campo en Estancia Nibepo Aike;180000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+6;Santa Cruz;Río Gallegos;6d/5n;1400000.0;12
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;750000.0;Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo Aerolíneas Argentinas (tarifa básica);350000.0;Vuelo ida y vuelta. Incluye mochila y carry-on
+Micro Marga semicama;120000.0;Ida y vuelta (28 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Hotel Patagonia;1000000.0;Incluye desayuno, estacionamiento gratis, servicio de conserjería. Costo con impuestos incluidos
+Departamento céntrico tipo studio;500000.0;Incluye cocina equipada, cancelación gratis. Costo con impuestos incluidos
+#EXCURSION_BASE
+City Tour Histórico + Museo de los Pioneros;50000.0
+#EXCURSIONES_ADICIONALES
+Parque Nacional Monte León;120000.0
+Reserva Costera Urbana (avistaje de aves);70000.0
+Día de campo en estancia;90000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+7;Santa Cruz;El Chaltén;8d/7n;2200000.0;12
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas + micro FTE-Chaltén;1300000.0;Vuelo ida y vuelta (BUE-FTE) + micro ida y vuelta. Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo JetSMART + micro FTE-Chaltén;700000.0;Vuelo ida y vuelta + micro ida y vuelta. Incluye mochila
+Micro Marga semicama;200000.0;Ida y vuelta (38 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Hostería Los Álamos;1100000.0;Incluye desayuno, vista a la montaña, cancelación gratis. Costo con impuestos incluidos
+Departamento/cabaña con cocina equipada;550000.0;Incluye ropa de cama, toallas, cancelación gratis
+#EXCURSION_BASE
+Traslado FTE-Chaltén ida y vuelta + trekking autoguiado Laguna Capri;70000.0
+#EXCURSIONES_ADICIONALES
+Trekking guiado a Laguna de los Tres;180000.0
+Navegación Lago del Desierto;150000.0
+Rafting en Río de las Vueltas;170000.0
+Full Day Vuelta al Hielo;250000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+8;Santa Cruz;El Calafate + El Chaltén;8d/7n;5200000.0;8
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas (4 personas);3800000.0;Vuelos ida y vuelta para 4 personas. Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo JetSMART (4 personas);2400000.0;Vuelos ida y vuelta para 4 personas. Incluye mochila y carry-on
+Micro Plusmar cama (4 personas);900000.0;Ida y vuelta (36 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Departamento de 2 dormitorios (vista al lago);3000000.0;Incluye cocina equipada, 2 baños, ropa de cama, cancelación gratis. Costo con impuestos incluidos
+Cabaña familiar con jardín;1200000.0;Incluye cocina, baño, artículos de aseo, traslado al aeropuerto
+#EXCURSION_BASE
+Parque Nacional Los Glaciares - Pasarelas del Perito Moreno;320000.0
+#EXCURSIONES_ADICIONALES
+Navegación Todo Glaciares;1000000.0
+Minitrekking en el Perito Moreno;1200000.0
+Cabalgata familiar;600000.0
+Día de nieve en Río Turbio (Valdelen);800000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+9;Tierra del Fuego;Ushuaia;8d/7n;2834934.0;18
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;1273075.0;Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo Flybondi;595862.0;Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera
+Vuelo Aerolíneas Argentinas;888063.0;Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on
+#ALOJAMIENTO
+Hotel Wyndham Garden Hotel del Glaciar★★★★;1463873.0;Incluye desayuno, spa, gimnasio, traslados al aeropuerto, vista a las mostañas, cancelación gratis. Costo + impuestos
+Villa Brescia Hotel;805190.0;Incluye desayuno, cancelación gratis. Costo + impuestos
+#EXCURSION_BASE
+Experiencia Parque Nacional Tierra del Fuego;85545.0
+#EXCURSIONES_ADICIONALES
+Navegación Canal Beagle con Trekk en Islas Bridges;85545.0
+Tren del Fin del Mundo;81518.0
+Paseo de un día de aventura y nieve en el centro de ski Cerro Castór;137894.0
+Canoero Catamaranes (navegación faro del Fin del Mundo);102458.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+10;Tierra del Fuego;Río Grande;8d/7n;1360614.0;15
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;759834.0;Vuelo ida y vuelta (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo Flybondi;151328.0;Vuelo ida y vuelta (3:30 hs). Incluye mochila/ cartera
+#ALOJAMIENTO
+Links Apart Hotel★★★;1290607.0;Incluye desayuno, estacionamiento gratis, cancelación gratis. Costo + impuestos
+Departamento Studio Plaza Río Grande;518240.0;Incluye 1 dormitorio, cancelación gratis, vistas a la ciudad una cocina con nevera y horno, y 1 baño con bidet, artículos de aseo gratuitos y lavadora, toallas y ropa de cama. Costo + impuestos
+#EXCURSION_BASE
+Experiencia Parque Nacional Tierra del Fuego;85545.0
+#EXCURSIONES_ADICIONALES
+Visita al Museo Virginia Choquintel;35800.0
+Visita a la Reserva Natural Urbana del Rio Grande;28500.0
+Visita a la Estancia María Behety;25600.0
+Experiencia clásica a los lagos de Escondido y Fagnano;210114.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+11;Tierra del Fuego;Tolhuín;8d/7n;2177894.0;10
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas y micro Marga Patagonia semicama;1336435.0;Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo Flybondi y micro Marga Patagonia semicama;659222.0;Vuelo ida y vuelta (3:30 hs) + micro (1:30 hs). Incluye mochila y asiento a elección
+#ALOJAMIENTO
+Hosteria Kaiken;1053754.0;Incluye desayuno, vista al lago, estacionamiento gratuito, restaurante, cancelación gratis. Costo + impuestos
+Apartamento en Atardeceres mágicos;470255.0;Incluye cocina equipada con nevera y horno, jardín, vistas a la montaña, 1 baño con ducha, toallas y ropa de cama. Costo + impuestos
+#EXCURSION_BASE
+Visita a la Reserva Natural Río Valdés;58500.0
+#EXCURSIONES_ADICIONALES
+Canotaje en el Lago Fagnano;120400.0
+Visita a Campingheim;110000.0
+Cabalgata en el corazón de la Isla La Mater;230000.0
+Tour de día completo por Cabo San Pablo y Estancia Pirinaica;264480.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+12;Tierra del Fuego;Ushuaia (familiar, ideal para 4 personas);8d/7n;1253871.0;5
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas y Jetsmart;963343.0;Vuelo ida por Aerolíneas Argentina y vuelta por Jetsmart (3:30 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Vuelo Flybondi;597862.0;Vuelo ida y vuelta (3:30 hs). Incluye mochila y carry-on
+#ALOJAMIENTO
+Apartamento Infinity Sky Deluxe;742810.0;Incluye apartamento de dos dormitorios con camas individuales, vista al mar, balcón, cocina equipada, dos baños con bidet y ducha, toallas, ropa de cama, admite mascotas y cancelación gratis. Costo + impuestos
+El Refugio de Nino Cabañas;250722.0;Incluye apartamento de un dormitorio con una cama doble, dos sofás camas, cocina equipada, jardín, 1 baño con bidet, ducha, artículos de aseo gratuitos toallas, ropa de cama, admite mascotas, traslado aeropuerto. Costo + impuestos
+#EXCURSION_BASE
+Experiencia Parque Nacional Tierra del Fuego;85545.0
+#EXCURSIONES_ADICIONALES
+Navegación Canal Beagle con Trekk en Islas Bridges;85545.0
+Tren del Fin del Mundo;81518.0
+Paseo de un día de aventura y nieve en el centro de ski Cerro Castór;137894.0
+Excursión a los Lagos Fueguinos en 4x4;157000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+13;Neuquén;Ciudad de Neuquén;8d/7n;1275007.0;18
+#TRANSPORTE
+Vuelo JetSMART;237626.0;Vuelo ida y vuelta (2h). Incluye mochila o cartera y una valija para despachar
+Vuelo Aerolíneas Argentinas;123703.0;Vuelo ida y vuelta (2h). Incluye carry-on de 8kg
+Micro Via Bariloche semicama;78000.0;Ida y vuelta (16h40m). Incluye mochila y valija pequeña
+#ALOJAMIENTO
+Hotel NEU 354★★★★;639737.0;Incluye desayuno tipo buffet, WIFI gratis, gimnasio, servicio de limpieza, recepción 24hs, aire acondicionado, TV por cable y caja fuerte
+Hilton Garden Inn Neuquén★★★★;1413833.0;Incluye habitación climatizada, WIFI gratis, restaurante, gimnasio, 5 salas de reuniones, minibar, limpieza y caja fuerte
+#EXCURSION_BASE
+Excursión a Parque Nacional Lanín y Parque Hua Hum;130768.0
+#EXCURSIONES_ADICIONALES
+Paseo en barco por los lagos y cascadas de San Martín de los Andes;130000.0
+Museo Carmen Funes (entrada/visita);20000.0
+Excursión a playa Yuco;120000.0
+Excursión a cerro Chapelco y Mirador Arrayan;110799.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+14;Neuquén;Villa La Angostura;7d/6n;2450000.0;10
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;410000.0;Vuelo ida y vuelta (2h15m). Incluye mochila o cartera, carry-on y asiento a elección
+Vuelo JetSMART;361446.0;Vuelo ida y vuelta (2h15m). Incluye mochila o cartera
+Micro Via TAC semicama;80000.0;Ida y vuelta (19 hs). Incluye mochila y valija pequeña
+#ALOJAMIENTO
+El Muelle / hotel boutique ★★★★;134365.0;Incluye habitaciones con hermosas vistas, TV, calefacción y SPA
+Las Balsas ★★★★★;403095.0;Incluye WIFI, pileta al aire libre y climatizada, SPA, gimnasio y restaurante gourmet
+#EXCURSION_BASE
+Navegación a Isla Victoria + Bosque de Arrayanes;215000.0
+#EXCURSIONES_ADICIONALES
+Cerro Bayo (excursión de un día);100000.0
+Circuito Angostura;31000.0
+Excursión a Villa Traful y Valle Encantado;75000.0
+Travesía en Kayak y Picnic en Villa La Angostura;95000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+15;Neuquén;San Martín de los Andes / Bariloche;6d/5n;1182340.0;19
+#TRANSPORTE
+Vuelo Flybondi;265428.0;Vuelo ida y vuelta (2h). Incluye mochila o cartera y carry on
+Vuelo Aerolíneas Argentinas;260000.0;Vuelo ida y vuelta (2h20m). Incluye equipaje de mano (ida solamente)
+Micro Via Bariloche semicama;84560.0;Ida y vuelta (23h45m). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Hotel Brizo★★★★;115545.0;Incluye desayuno buffet, pileta al aire libre, WIFI, gimnasio, SPA y bienestar
+Correntoso Lake & River Hotel★★★★★;335912.0;Incluye desayuno gourmet, pileta climatizada y al aire libre, SPA, restaurante y actividades al aire libre
+#EXCURSION_BASE
+Circuito de los 7 Lagos;100000.0
+#EXCURSIONES_ADICIONALES
+Lago Moreno (kayak + caminata);377000.0
+Excursión a Villa Meliquina;43000.0
+Aventura en kayak por los Lagos Machónico y Pichi;76000.0
+Cabalgatas por los alrededores de San Martín de los Andes;85000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+16;Neuquén;Caviahue / Lagunas de Epulafquén;5d/4n;1033904.0;15
+#TRANSPORTE
+Vuelo JetSMART;237626.0;Vuelo ida y vuelta (2h). Incluye mochila o cartera y valija para despachar
+Vuelo Aerolíneas Argentinas;123703.0;Vuelo ida y vuelta (2h). Incluye carry-on de 8kg
+Micro Via TAC semicama;80000.0;Ida y vuelta (19h). Incluye mochila y valija pequeña
+#ALOJAMIENTO
+Alojamiento local en Caviahue;107492.0;Incluye desayuno, WIFI gratis y cancelación gratis
+Lodge de montaña boutique ★★★★★;268730.0;Incluye suites de lujo, restaurante gourmet, kayak por el río, SPA y masajes
+#EXCURSION_BASE
+Lagunas de Epulafquén (senderismo/avistaje);50000.0
+#EXCURSIONES_ADICIONALES
+Esquí / trekking invernal en Caviahue;120000.0
+Mountain Bike;80000.0
+Trekking al Volcán Copahue;31000.0
+Senderismo por la Laguna Escondida;45000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+17;Río Negro;San Carlos de Bariloche;8d/7n;970000.0;21
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas;654879.0;Vuelo ida y vuelta (2h25m/2h05m). Incluye mochila, carry-on y equipaje a despachar
+Vuelo Flybondi;239434.0;Vuelo ida y vuelta (2h20m). Incluye mochila y carry-on
+Micro Chevallier semicama;156150.0;Ida y vuelta (19 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Hotel Patagonia Signature ★★★★;953346.0;Incluye desayuno, spa, gimnasio, traslados al aeropuerto, vista al lago, cancelación gratis.
+Cabaña Petite;781473.0;Incluye cocina equipada, lavadora, estacionamiento, cancelación gratis.
+#EXCURSION_BASE
+Paseo náutico (avistaje de delfines);167000.0
+#EXCURSIONES_ADICIONALES
+Cerro Catedral (ascenso);31955.0
+Excursión terrestre a Trelew y Gaiman;175000.0
+Punta Tombo por crucero (pingüinos);198000.0
+Lago Nahuel Huapi - Isla Victoria y Bosque de Arrayanes;185000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+18;Río Negro;El Bolsón;8d/7n;743000.0;22
+#TRANSPORTE
+Vuelo JetSMART + Micro Busplus;481770.0;Vuelo ida y vuelta (2 hs) + Micro ida y vuelta (2h40m). Vuelo incluye mochila, carry-on, asiento a elección. Micro incluye mochila y valija mediana
+Micro ViaBariloche semicama + Micro Busplus;127800.0;Ida y vuelta (25 hs). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Altos del Sur Cabañas ★★★★★;719969.0;Incluye cocina equipada, terraza con vistas, estacionamiento.
+Hotel Buena Vida Social Club;992861.0;Incluye desayuno, bar, traslados al aeropuerto, cancelación gratis.
+#EXCURSION_BASE
+Lago Puelo + recorrido El Bolsón;75387.0
+#EXCURSIONES_ADICIONALES
+Feria artesanal;20000.0
+Refugio Piltriquitrón;60000.0
+Tour cervecerías locales;45000.0
+Cabalgatas;20000.0
+Safari fotográfico;25000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+19;Río Negro;Las Grutas;8d/7n;882000.0;30
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas a Viedma + Micro regional;620000.0;Vuelo ida y vuelta (2h15m) + Micro ida y vuelta (1h30m). Vuelo incluye mochila, carry-on, equipaje a despachar y asiento a elección. Micro incluye mochila y valija mediana
+Micro Andesmar semicama;118000.0;Ida y vuelta (15h52m). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Médanos Patagonia★★★★;1254140.0;Cama doble + sofá cama, cocina equipada, balcón vista al mar, cafeteras, cancelación gratis. Con desayuno: $1.463.163
+Apart del Golfo★★★★;1012453.0;Incluye aire acondicionado, TV, cocina equipada, minibar, cancelación gratis.
+#EXCURSION_BASE
+Salinas del Gualicho;215140.0
+#EXCURSIONES_ADICIONALES
+Snorkel + Fuerte Argentino;215141.0
+4x4 por médanos;95000.0
+Cañadón de las Ostras + El Sótano;114742.0
+Paseo embarcado Bahía de San Antonio (avistaje de fauna marina);180000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+
+#PAQUETE
+20;Río Negro;Viedma;8d/7n;1135000.0;14
+#TRANSPORTE
+Vuelo Aerolíneas Argentinas directo;450000.0;Vuelo ida y vuelta (2 hs). Incluye mochila, carry-on, equipaje a despachar y asiento a elección
+Micro Andesmar semicama;96000.0;Ida y vuelta (12h55m). Incluye mochila y valija mediana
+#ALOJAMIENTO
+Departamento céntrico ★★★;477260.0;Incluye sofás cama, aire acondicionado, TV, cocina equipada, cancelación gratis
+Hotel y Casino del Río★★★★;1857985.0;Incluye TV, minibar, desayuno, cancelación gratis
+#EXCURSION_BASE
+Faro Río Negro;20000.0
+#EXCURSIONES_ADICIONALES
+Colonia de loros barranqueros;25000.0
+Kayak en la ría;60000.0
+Paseo histórico Manzana Fundacional Viedma y Carmen de Patagones;40000.0
+Avistaje fauna marina en desembocadura Río Negro;85000.0
+#FECHAS
+alta temporada;2022-06-30
+media temporada;2022-07-30
+baja temporada; 2022-08-30
+#FIN_PAQUETE
+

@@ -1,0 +1,16 @@
+1;4;Comodoro Rivadavia;yasmin;17/10/2025;{'nombre': 'alta temporada', 'fecha': '2022-06-30'};4411200.00;CANCELADA;Transporte: Micro Plusmar cama | Alojamiento: Lucania Palazzo Hotel★★★★
+2;1;Puerto Madryn;yas;17/10/2025;{'nombre': 'alta temporada', 'fecha': '2022-06-30'};4236939.60;ACTIVA;Transporte: Vuelo Aerolíneas Argentinas | Alojamiento: Hotel Dazzle by Wyndham ★★★★ | Extra: Snorkel con lobos marinos y peces
+3;3;Trelew;carla;17/10/2025;{'nombre': 'media temporada', 'fecha': '2022-07-30'};2299038.00;ACTIVA;Transporte: Vuelo JetSMART | Alojamiento: Hotel Libertador★★★ | Extra: Punta Tombo por tierra (pingüinos)
+4;1;Puerto Madryn;yas;17/10/2025;{'nombre': 'baja temporada', 'fecha': ' 2022-08-30'};2340005.00;ACTIVA;Transporte: Micro Plusmar semicama | Alojamiento: Hotel Rayentray Hostal | Extra: Excursión terrestre a Trelew y Gaiman
+6;6;Río Gallegos;ger;24/10/2025;{'nombre': 'alta temporada', 'fecha': '2022-06-30'};2484000.00;ACTIVA;Transporte: Micro Marga semicama | Alojamiento: Departamento céntrico tipo studio
+7;8;El Calafate + El Chaltén;ger;24/10/2025;media temporada;7620000.00;ACTIVA;Transporte: Micro Plusmar cama (4 personas) | Alojamiento: Cabaña familiar con jardín
+8;5;El Calafate;p;24/10/2025;alta temporada;5256000.00;ACTIVA;Transporte: Vuelo JetSMART | Alojamiento: Hotel Sierra Nevada ★★★
+9;13;Ciudad de Neuquén;ger;24/10/2025;media temporada;2943311.00;CANCELADA;Transporte: Vuelo Aerolíneas Argentinas | Alojamiento: Hilton Garden Inn Neuquén★★★★
+1;2;Esquel;ger;24/10/2025;media temporada;946000.00;ACTIVA;Transporte: Micro Plusmar semicama | Alojamiento: My Pod House ★★★★
+2;15;San Martín de los Andes / Bariloche;ger;24/10/2025;media temporada;1742885.00;ACTIVA;Transporte: Vuelo Aerolíneas Argentinas | Alojamiento: Hotel Brizo★★★★ | Extra: Cabalgatas por los alrededores de San Martín de los Andes
+3;20;Viedma;ger;24/10/2025;media temporada;1728260.00;ACTIVA;Transporte: Micro Andesmar semicama | Alojamiento: Departamento céntrico ★★★
+10;17;San Carlos de Bariloche;ger;24/10/2025;media temporada;2504780.00;ACTIVA;Transporte: Vuelo Flybondi | Alojamiento: Hotel Patagonia Signature ★★★★ | Extra: Excursión terrestre a Trelew y Gaiman
+11;1;Puerto Madryn;dolores;24/10/2025;alta temporada;4474539.60;ACTIVA;Transporte: Vuelo Aerolíneas Argentinas | Alojamiento: Hotel Dazzle by Wyndham ★★★★ | Extras: [Snorkel con lobos marinos y peces, Punta Tombo por crucero (pingüinos)]
+12;1;Puerto Madryn;dolores;28/10/2025;alta temporada;3990939.60;CANCELADA;Transporte: Vuelo Aerolíneas Argentinas | Alojamiento: Hotel Dazzle by Wyndham ★★★★
+13;1;Puerto Madryn;dolores;28/10/2025;alta temporada;3990939.60;CANCELADA;Transporte: Vuelo Aerolíneas Argentinas | Alojamiento: Hotel Dazzle by Wyndham ★★★★
+14;1;Puerto Madryn;milagros;7/11/2025;alta temporada;4437339.60;CANCELADA;Transporte: Vuelo Aerolíneas Argentinas | Alojamiento: Hotel Dazzle by Wyndham ★★★★ | Extras: [Snorkel con lobos marinos y peces, Paseo náutico (avistaje de delfines)]
