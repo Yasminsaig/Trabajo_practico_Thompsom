@@ -806,14 +806,19 @@ def mostrar_menu_principal():
         
         opcion = solicitar_opcion_menu_recursivo() 
 
-        if opcion == 1: gestionar_vista_de_paquetes() 
-        elif opcion == 2: iniciar_busqueda_recursiva() 
-        elif opcion == 3: gestionar_reserva() 
-        elif opcion == 4: gestionar_cancelacion() 
-        elif opcion == 5:
-            print("\nGracias por usar el sistema.")
-            input("Presione Enter para salir...")
-            salir = True
+        match opcion:
+            case 1: 
+                gestionar_vista_de_paquetes()
+            case 2: 
+                iniciar_busqueda_recursiva()
+            case 3: 
+                gestionar_reserva()
+            case 4: 
+                gestionar_cancelacion()
+            case 5:
+                print("\nGracias por usar el sistema.")
+                input("Presione Enter para salir...")
+                salir = True
 
 # --- Programa Principal ---
 
@@ -846,5 +851,6 @@ while not salir_del_sistema:
     else:
         print("\nOpción no válida. Por favor, intente de nuevo.")
         input("\nPresione Enter para continuar...")
+
 
 
