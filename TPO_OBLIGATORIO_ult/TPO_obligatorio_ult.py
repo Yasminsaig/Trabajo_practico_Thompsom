@@ -824,18 +824,26 @@ def solicitar_opcion_menu_recursivo():
         input("\nPresione Enter para continuar...")
         return solicitar_opcion_menu_recursivo() # Llamada Recursiva
 
-# --- Programa Principal ---
-
 def mostrar_menu_principal(): 
+    
+    # --- Matriz de Opciones  ---
+    opciones_matriz = [
+        [1, "Ver Paquetes Turísticos"],
+        [2, "Buscar Paquete por Criterios"],
+        [3, "Realizar una Reserva"],
+        [4, "Cancelar una Reserva"],
+        [5, "Salir"] 
+    ]
+    
     salir = False
     while not salir:
         limpiar_consola()
         print("--- MENÚ PRINCIPAL ---")
-        print("1. Ver Paquetes Turísticos")
-        print("2. Buscar Paquete por Criterios")
-        print("3. Realizar una Reserva")
-        print("4. Cancelar una Reserva")
-        print("5. Salir")
+        
+        for fila in opciones_matriz:
+            numero_opcion = fila[0]
+            texto_opcion = fila[1]
+            print(f"{numero_opcion}. {texto_opcion}")
         
         opcion = solicitar_opcion_menu_recursivo() 
 
@@ -847,6 +855,8 @@ def mostrar_menu_principal():
             print("\nGracias por usar el sistema.")
             input("Presione Enter para salir...")
             salir = True
+
+# --- Programa Principal ---
 
 salir_del_sistema = False
 while not salir_del_sistema:
@@ -877,3 +887,4 @@ while not salir_del_sistema:
     else:
         print("\nOpción no válida. Por favor, intente de nuevo.")
         input("\nPresione Enter para continuar...")
+
