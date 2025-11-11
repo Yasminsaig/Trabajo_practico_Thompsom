@@ -1,7 +1,7 @@
 import datetime
 import os
 
-# --- Constantes Globales (Buena Práctica - Clase 2) ---
+# --- Constantes Globales ---
 ARCHIVO_USUARIOS = "usuarios.txt"
 ARCHIVO_PAQUETES = "paquetes.txt"
 ARCHIVO_RESERVAS = "reservas.txt"
@@ -33,7 +33,6 @@ def obtener_siguiente_ticket():
         f_contador_escritura = open(ARCHIVO_CONTADOR_TICKET, "w")
         f_contador_escritura.write(str(siguiente_ticket))
     except OSError:
-        # Aquí 'pass' es aceptable, si falla, se reintentará la próxima vez.
         pass 
     finally:
         if f_contador_escritura:
@@ -49,7 +48,6 @@ def realizar_login():
     f_usuarios = None
     try:
         f_usuarios = open(ARCHIVO_USUARIOS, "rt", encoding='utf-8')
-        # Usamos 'for linea in arch' (Clase 9, Ejemplo 3)
         for linea in f_usuarios:
             try:
                 usuario_archivo, contrasena_archivo = linea.strip().split(";")
@@ -57,7 +55,7 @@ def realizar_login():
                     acceso_concedido = True
                     break
             except ValueError:
-                continue # Línea corrupta en usuarios.txt, la ignoramos
+                continue 
     except FileNotFoundError:
         print(f"\nADVERTENCIA: No se encontró '{ARCHIVO_USUARIOS}'. Puede registrar un usuario.")
     except OSError as e: 
@@ -83,14 +81,12 @@ def registrar_usuario():
             f_lectura = open(ARCHIVO_USUARIOS, "rt", encoding='utf-8')
             for linea in f_lectura:
                 try:
-                    # Usamos .split(';')[0] para tomar solo el usuario
                     if linea.strip().split(';')[0].lower() == nuevo_usuario.lower():
                         usuario_existe = True
                         break
                 except (ValueError, IndexError):
-                    continue # Línea corrupta
+                    continue 
         except FileNotFoundError:
-            # Si el archivo no existe, no hay usuarios, 'pass' es correcto.
             pass 
         finally:
             if f_lectura:
@@ -104,7 +100,6 @@ def registrar_usuario():
     nueva_contrasena = input("Ingrese su nueva contraseña: ")
     f_escritura = None
     try:
-        # Modo 'at' (append text) (Clase 9)
         f_escritura = open(ARCHIVO_USUARIOS, "at", encoding='utf-8')
         f_escritura.write(f"{nuevo_usuario};{nueva_contrasena}\n") 
         print("\n¡Usuario registrado con éxito!")
@@ -114,7 +109,7 @@ def registrar_usuario():
         if f_escritura:
             f_escritura.close() 
 
-# --- Funciones de Lógica de Paquetes (AQUÍ ESTÁN LOS CAMBIOS IMPORTANTES) ---
+# --- Funciones de Lógica de Paquetes ---
 
 def modificar_cupo_paquete_en_archivo(id_paquete_modificar, cantidad_a_sumar):
     """
@@ -137,7 +132,6 @@ def modificar_cupo_paquete_en_archivo(id_paquete_modificar, cantidad_a_sumar):
             linea_stripped = linea.strip()
             f_escritura.write(linea) 
 
-            # Usamos Slicing [0:8] (Clase 5) en lugar de .startswith()
             if linea_stripped and linea_stripped[0:8] == "#PAQUETE":
                 linea_datos = f_lectura.readline()
                 if not linea_datos:
@@ -173,7 +167,6 @@ def modificar_cupo_paquete_en_archivo(id_paquete_modificar, cantidad_a_sumar):
         if f_lectura: f_lectura.close()
         if f_escritura: f_escritura.close()
 
-    # --- Reemplazo del archivo original ---
     if paquete_encontrado:
         f_lectura_temp = None
         f_escritura_orig = None
@@ -212,7 +205,6 @@ def _parsear_paquete_desde_linea(f_paquetes, linea_datos_leida):
         paquete_actual["destino"] = dest; paquete_actual["duracion"] = dur
         paquete_actual["precio_base"] = float(precio_str); paquete_actual["cupo"] = int(cupo_str)
     except (ValueError, IndexError, TypeError) as e:
-        # Error amigable (Clase 8)
         print(f"ADVERTENCIA: Se omitió un paquete con cabecera corrupta. Error: {e}")
         return None, f_paquetes.readline() 
 
@@ -240,11 +232,10 @@ def _parsear_paquete_desde_linea(f_paquetes, linea_datos_leida):
                     elif seccion_actual == "fechas":
                         paquete_actual[seccion_actual].append({"nombre": partes[0], "fecha": partes[1]})
                 except (ValueError, IndexError, TypeError) as e:
-                    # Error amigable (Clase 8)
                     print(f"ADVERTENCIA: Se omitió una línea corrupta en la sección '{seccion_actual}'. Error: {e}")
         linea = f_paquetes.readline()
         
-    return paquete_actual, "" # Fin de archivo
+    return paquete_actual, "" 
 
 def _obtener_provincias_unicas():
     """
@@ -258,7 +249,6 @@ def _obtener_provincias_unicas():
         f_paquetes = open(ARCHIVO_PAQUETES, "rt", encoding="utf-8")
         linea = f_paquetes.readline()
         while linea:
-            # Usamos Slicing (Clase 5)
             if linea.strip() and linea.strip()[0:8] == "#PAQUETE":
                 linea_datos = f_paquetes.readline()
                 if not linea_datos:
@@ -267,7 +257,6 @@ def _obtener_provincias_unicas():
                     provincia = linea_datos.strip().split(';')[1]
                     provincias.add(provincia)
                 except (IndexError, TypeError):
-                    # Error amigable (Clase 8)
                     print("ADVERTENCIA: Se omitió un paquete con formato incorrecto.")
             linea = f_paquetes.readline()
     except FileNotFoundError:
@@ -278,7 +267,7 @@ def _obtener_provincias_unicas():
         if f_paquetes:
             f_paquetes.close()
             
-    return list(provincias) # Convertimos el set a lista
+    return list(provincias)
 
 def _obtener_paquetes_de_provincia(provincia_buscada):
     """
@@ -292,7 +281,6 @@ def _obtener_paquetes_de_provincia(provincia_buscada):
         f_paquetes = open(ARCHIVO_PAQUETES, "rt", encoding="utf-8")
         linea = f_paquetes.readline()
         while linea:
-            # Usamos Slicing (Clase 5)
             if linea.strip() and linea.strip()[0:8] == "#PAQUETE":
                 linea_datos = f_paquetes.readline()
                 if not linea_datos:
@@ -301,7 +289,6 @@ def _obtener_paquetes_de_provincia(provincia_buscada):
                 paquete_parseado = None
                 try:
                     if linea_datos.strip().split(';')[1] == provincia_buscada:
-                        # Coincide: Parseamos solo este paquete
                         paquete_parseado, proxima_linea = _parsear_paquete_desde_linea(f_paquetes, linea_datos)
                         if paquete_parseado:
                             paquetes_encontrados.append(paquete_parseado)
@@ -309,7 +296,6 @@ def _obtener_paquetes_de_provincia(provincia_buscada):
                         continue 
                 
                 except (IndexError, TypeError):
-                    # Error amigable (Clase 8)
                     print("ADVERTENCIA: Se omitió un paquete con formato incorrecto.")
             
             linea = f_paquetes.readline()
@@ -325,23 +311,17 @@ def _obtener_paquetes_de_provincia(provincia_buscada):
     return paquetes_encontrados
 
 def _seleccionar_paquete_interactivo():
-    """
-    (Función Unificada - Clase 2: "Evitar código repetido")
-    Maneja la selección interactiva (Paso 1: Provincia, Paso 2: Paquete).
-    Devuelve el 'paquete_elegido' o 'None' si el usuario cancela.
-    """
-    # Vuelta 1: Eficiente (Clase 9)
+    
     provincias = _obtener_provincias_unicas()
     
     if not provincias:
         print("\nNo hay paquetes cargados.");
         return None
 
-    while True: # Bucle de selección de Provincia
+    while True: 
         limpiar_consola()
         print("--- SELECCIÓN DE PAQUETE (Paso 1: Provincia) ---")
         for i, prov in enumerate(provincias):
-            # Usamos enumerate (Clase 4)
             print(f"   {i+1}. {prov}")
         print("\n   0. Volver al Menú Principal")
 
@@ -349,12 +329,11 @@ def _seleccionar_paquete_interactivo():
         try:
             nro_prov = int(nro_prov_str)
             if nro_prov == 0:
-                return None # Usuario canceló
+                return None 
 
             if 1 <= nro_prov <= len(provincias):
                 provincia_elegida = provincias[nro_prov - 1]
                 
-                # Vuelta 2: Eficiente (Clase 9)
                 paquetes_de_provincia = _obtener_paquetes_de_provincia(provincia_elegida)
                 
                 if not paquetes_de_provincia:
@@ -362,7 +341,7 @@ def _seleccionar_paquete_interactivo():
                     input("Presione Enter...")
                     continue 
 
-                while True: # Bucle de selección de Paquete
+                while True: 
                     limpiar_consola()
                     print(f"--- SELECCIÓN DE PAQUETE (Paso 2: Paquete en {provincia_elegida.upper()}) ---")
                     for i, p in enumerate(paquetes_de_provincia):
@@ -373,10 +352,10 @@ def _seleccionar_paquete_interactivo():
                     try:
                         nro_paq = int(nro_paq_str)
                         if nro_paq == 0:
-                            break # Vuelve al menú de provincias
+                            break 
 
                         if 1 <= nro_paq <= len(paquetes_de_provincia):
-                            return paquetes_de_provincia[nro_paq - 1] # ¡Devuelve el paquete!
+                            return paquetes_de_provincia[nro_paq - 1] 
                         else:
                             print("Error: Número de paquete no válido."); input("...")
                     except ValueError:
@@ -395,17 +374,14 @@ def registrar_reserva_en_archivo(ticket, paquete, nombre_cliente, opcion_fecha, 
         fecha_hoy = datetime.date.today()
         fecha_reserva = f"{fecha_hoy.day}/{fecha_hoy.month}/{fecha_hoy.year}" 
 
-        # Usamos .get() (Clase 7) para evitar errores si no hay excursiones
         detalles = f"Transporte: {opciones_elegidas['transporte']['nombre']} | Alojamiento: {opciones_elegidas['alojamiento']['nombre']}"
         lista_excursiones = opciones_elegidas.get('excursiones_adicionales')
         if lista_excursiones:
-            # Lista por comprensión (Clase 4)
             nombres_excursiones = ", ".join([exc['nombre'] for exc in lista_excursiones])
             detalles += f" | Extras: [{nombres_excursiones}]"
 
         fecha_nombre = opcion_fecha['nombre'] if opcion_fecha and 'nombre' in opcion_fecha else 'N/A'
 
-        # f-strings (Clase 6) para formateo
         linea = f"{ticket};{paquete['id']};{paquete['destino']};{nombre_cliente};{fecha_reserva};{fecha_nombre};{precio_final:.2f};ACTIVA;{detalles}\n"
         f_reservas.write(linea) 
     except OSError as e: 
@@ -414,7 +390,6 @@ def registrar_reserva_en_archivo(ticket, paquete, nombre_cliente, opcion_fecha, 
         if f_reservas: f_reservas.close() 
 
 def normalizar_cadena_simple(cadena):
-    # (Técnica de reemplazo vista en Clase 5/6)
     cadena = cadena.lower() 
     reemplazos = { 'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u' }
     for acentuada, sin_acento in reemplazos.items():
@@ -426,7 +401,6 @@ def cumple_filtros(paquete, filtros):
         texto_a_buscar_normalizado = normalizar_cadena_simple(filtros['texto_buscar'])
         destino_normalizado = normalizar_cadena_simple(paquete['destino'])
         provincia_normalizada = normalizar_cadena_simple(paquete['provincia'])
-        # Operador 'in' (Clase 5)
         if texto_a_buscar_normalizado not in destino_normalizado and \
            texto_a_buscar_normalizado not in provincia_normalizada:
             return False
@@ -442,7 +416,6 @@ def seleccionar_opcion(nombre_seccion, lista_opciones, permite_ninguno=False):
         return None
     
     print(f"\n--- Opciones de {nombre_seccion} ---")
-    # Usamos enumerate (Clase 4)
     for i, opcion in enumerate(lista_opciones):
         print(f"   {i+1}. {opcion.get('nombre', opcion)}", end="")
         if 'precio' in opcion:
@@ -451,7 +424,6 @@ def seleccionar_opcion(nombre_seccion, lista_opciones, permite_ninguno=False):
              print()
              
     while not opcion_valida:
-        # Manejo de Excepciones (Clase 8)
         try:
             prompt = f"Seleccione Nro de {nombre_seccion} (1-{len(lista_opciones)}"
             prompt += ", 0 para ninguna): " if permite_ninguno else "): "
@@ -461,7 +433,6 @@ def seleccionar_opcion(nombre_seccion, lista_opciones, permite_ninguno=False):
                 opcion_seleccionada = None
                 opcion_valida = True
             elif 1 <= opcion_num <= len(lista_opciones):
-                # Acceso a lista por subíndice (Clase 3)
                 opcion_seleccionada = lista_opciones[opcion_num - 1]
                 opcion_valida = True
             else:
@@ -472,7 +443,6 @@ def seleccionar_opcion(nombre_seccion, lista_opciones, permite_ninguno=False):
 
 def seleccionar_multiples_opciones(nombre_seccion, lista_opciones):
     opciones_seleccionadas = []
-    # Copia de lista (Clase 4) para no modificar la original
     opciones_disponibles = list(lista_opciones) 
     if not opciones_disponibles:
         print(f"No hay opciones disponibles para {nombre_seccion}.")
@@ -494,7 +464,6 @@ def seleccionar_multiples_opciones(nombre_seccion, lista_opciones):
             if opcion_num == 0:
                 break 
             elif 1 <= opcion_num <= len(opciones_disponibles):
-                # Método .pop() (Clase 3)
                 opcion_elegida = opciones_disponibles.pop(opcion_num - 1) 
                 opciones_seleccionadas.append(opcion_elegida)
                 print(f"'{opcion_elegida['nombre']}' agregada.")
@@ -518,7 +487,6 @@ def mostrar_detalles_paquete(paquete):
     print(f"Duración: {paquete['duracion']} | Cupo actual: {paquete['cupo']}")
     print(f"Precio Base: ${paquete['precio_base']:.2f}")
     for seccion, titulo in [('transporte', 'Transporte'), ('alojamiento', 'Alojamiento')]:
-        # Método .get() (Clase 7)
         if paquete.get(seccion):
             print(f"\n--- Opciones de {titulo} ---")
             for i, opcion in enumerate(paquete[seccion]):
@@ -563,13 +531,11 @@ def buscar_recursivo_interactivo(f_paquetes, filtros, linea_actual):
         print("\n--- No se encontraron más resultados. ---")
         return 
     
-    # Leemos la línea de datos
     linea_datos = f_paquetes.readline()
     if not linea_datos:
-        buscar_recursivo_interactivo(f_paquetes, filtros, "") # Fin de archivo
+        buscar_recursivo_interactivo(f_paquetes, filtros, "") 
         return
         
-    # Usamos el parser unificado (Clase 2)
     paquete_actual, proxima_linea = _parsear_paquete_desde_linea(f_paquetes, linea_datos)
     
     if paquete_actual and cumple_filtros(paquete_actual, filtros):
@@ -583,7 +549,7 @@ def buscar_recursivo_interactivo(f_paquetes, filtros, linea_actual):
             # Llamada recursiva (Clase 10)
             buscar_recursivo_interactivo(f_paquetes, filtros, proxima_linea)
         else:
-            return # Fin de la recursión por decisión del usuario
+            return 
     else:
         # Llamada recursiva (Clase 10)
         buscar_recursivo_interactivo(f_paquetes, filtros, proxima_linea)
@@ -634,9 +600,8 @@ def gestionar_reserva():
     paquete_elegido = _seleccionar_paquete_interactivo()
 
     if not paquete_elegido:
-        return # El usuario canceló la selección
+        return 
 
-    # (El resto del flujo es idéntico al que ya tenías)
     if paquete_elegido['cupo'] <= 0:
         print(f"\nLo sentimos, no hay cupo para {paquete_elegido['destino']}.")
         input("\nPresione Enter para volver al menú...")
@@ -696,10 +661,8 @@ def gestionar_reserva():
             }
             registrar_reserva_en_archivo(ticket, paquete_elegido, nombre_cliente, opcion_fecha, opciones_elegidas, precio_final)
             print(f"\n¡Reserva confirmada con éxito!")
-            # f-string formateado (Clase 6)
             print(f"Su número de ticket es: {ticket:08d}")
             
-            # Usamos la función eficiente (Clase 9)
             if modificar_cupo_paquete_en_archivo(paquete_elegido['id'], -1):
                 print("Se ha descontado un cupo del paquete.")
             else:
@@ -738,7 +701,6 @@ def gestionar_cancelacion():
         f_lectura = open(ARCHIVO_RESERVAS, "rt", encoding='utf-8')
         f_escritura = open(archivo_temporal_nombre, "wt", encoding='utf-8')
 
-        # Usamos 'for linea in arch' (Clase 9, Ejemplo 3)
         for linea in f_lectura:
             try:
                 partes = linea.strip().split(';')
@@ -759,7 +721,6 @@ def gestionar_cancelacion():
                 f_escritura.write(linea) 
     
     except FileNotFoundError:
-        # Este 'except' es por si el archivo se borra justo después del 'os.path.exists'
         print("Aún no existen reservas para cancelar."); input("\nPresione Enter..."); return 
     except OSError as e:
         print(f"Error al leer el archivo de reservas: {e}"); input("\nPresione Enter..."); return 
@@ -768,7 +729,6 @@ def gestionar_cancelacion():
         if f_escritura: f_escritura.close()
 
     if reserva_encontrada and not reserva_ya_cancelada:
-        # Usamos la función eficiente (Clase 9)
         cupo_repuesto = modificar_cupo_paquete_en_archivo(id_paquete_a_reponer, 1)
 
         f_lectura_temp = None
@@ -778,7 +738,6 @@ def gestionar_cancelacion():
             f_escritura_orig = open(ARCHIVO_RESERVAS, "wt", encoding='utf-8')
             for linea in f_lectura_temp:
                 f_escritura_orig.write(linea)
-            # f-string formateado (Clase 6)
             print(f"\n¡Reserva del ticket {ticket_a_cancelar:08d} cancelada con éxito!")
             if cupo_repuesto:
                 print("Se ha restaurado y guardado un cupo al paquete correspondiente.")
@@ -887,4 +846,5 @@ while not salir_del_sistema:
     else:
         print("\nOpción no válida. Por favor, intente de nuevo.")
         input("\nPresione Enter para continuar...")
+
 
