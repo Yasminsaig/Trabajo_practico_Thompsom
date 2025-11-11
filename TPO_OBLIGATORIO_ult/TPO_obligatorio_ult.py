@@ -111,7 +111,7 @@ def registrar_usuario():
 
 # --- Funciones de Lógica de Paquetes ---
 
-def modificar_cupo_paquete_en_archivo(id_paquete_modificar, cantidad_a_sumar):
+def actualizar_cupo_en_archivo(id_paquete_modificar, cantidad_a_sumar):
     """
     (Escritura Eficiente - Clase 9, Ejemplo 5)
     Modifica el cupo de un paquete directamente en paquetes.txt
@@ -190,7 +190,7 @@ def modificar_cupo_paquete_en_archivo(id_paquete_modificar, cantidad_a_sumar):
         except OSError: pass
         return False
 
-def _parsear_paquete_desde_linea(f_paquetes, linea_datos_leida):
+def leer_paquete_completo_del_archivo(f_paquetes, linea_datos_leida):
     """
     (Función Unificada - Clase 2)
     Función ÚNICA de parseo. Recibe la línea de datos (ej: 1;Chubut;...)
@@ -289,7 +289,7 @@ def _obtener_paquetes_de_provincia(provincia_buscada):
                 paquete_parseado = None
                 try:
                     if linea_datos.strip().split(';')[1] == provincia_buscada:
-                        paquete_parseado, proxima_linea = _parsear_paquete_desde_linea(f_paquetes, linea_datos)
+                        paquete_parseado, proxima_linea = leer_paquete_completo_del_archivo(f_paquetes, linea_datos)
                         if paquete_parseado:
                             paquetes_encontrados.append(paquete_parseado)
                         linea = proxima_linea 
@@ -536,7 +536,7 @@ def buscar_recursivo_interactivo(f_paquetes, filtros, linea_actual):
         buscar_recursivo_interactivo(f_paquetes, filtros, "") 
         return
         
-    paquete_actual, proxima_linea = _parsear_paquete_desde_linea(f_paquetes, linea_datos)
+    paquete_actual, proxima_linea = leer_paquete_completo_del_archivo(f_paquetes, linea_datos)
     
     if paquete_actual and cumple_filtros(paquete_actual, filtros):
         print("\n--- Paquete Encontrado ---")
@@ -663,7 +663,7 @@ def gestionar_reserva():
             print(f"\n¡Reserva confirmada con éxito!")
             print(f"Su número de ticket es: {ticket:08d}")
             
-            if modificar_cupo_paquete_en_archivo(paquete_elegido['id'], -1):
+            if actualizar_cupo_en_archivo(paquete_elegido['id'], -1):
                 print("Se ha descontado un cupo del paquete.")
             else:
                 print("ADVERTENCIA: No se pudo actualizar el cupo en el archivo.")
@@ -729,7 +729,7 @@ def gestionar_cancelacion():
         if f_escritura: f_escritura.close()
 
     if reserva_encontrada and not reserva_ya_cancelada:
-        cupo_repuesto = modificar_cupo_paquete_en_archivo(id_paquete_a_reponer, 1)
+        cupo_repuesto = actualizar_cupo_en_archivo(id_paquete_a_reponer, 1)
 
         f_lectura_temp = None
         f_escritura_orig = None
@@ -851,6 +851,7 @@ while not salir_del_sistema:
     else:
         print("\nOpción no válida. Por favor, intente de nuevo.")
         input("\nPresione Enter para continuar...")
+
 
 
 
